@@ -1,0 +1,14 @@
+C:\Users\Bridgelabz\Desktop\sumit\Logical\obj\Debug\netcoreapp3.1\Logical.csprojAssemblyReference.cache
+C:\Users\Bridgelabz\Desktop\sumit\Logical\obj\Debug\netcoreapp3.1\Logical.AssemblyInfoInputs.cache
+C:\Users\Bridgelabz\Desktop\sumit\Logical\obj\Debug\netcoreapp3.1\Logical.AssemblyInfo.cs
+C:\Users\Bridgelabz\Desktop\sumit\Logical\bin\Debug\netcoreapp3.1\Logical.exe
+C:\Users\Bridgelabz\Desktop\sumit\Logical\bin\Debug\netcoreapp3.1\Logical.deps.json
+C:\Users\Bridgelabz\Desktop\sumit\Logical\bin\Debug\netcoreapp3.1\Logical.runtimeconfig.json
+C:\Users\Bridgelabz\Desktop\sumit\Logical\bin\Debug\netcoreapp3.1\Logical.runtimeconfig.dev.json
+C:\Users\Bridgelabz\Desktop\sumit\Logical\bin\Debug\netcoreapp3.1\Logical.dll
+C:\Users\Bridgelabz\Desktop\sumit\Logical\bin\Debug\netcoreapp3.1\Logical.pdb
+C:\Users\Bridgelabz\Desktop\sumit\Logical\bin\Debug\netcoreapp3.1\Utility.dll
+C:\Users\Bridgelabz\Desktop\sumit\Logical\bin\Debug\netcoreapp3.1\Utility.pdb
+C:\Users\Bridgelabz\Desktop\sumit\Logical\obj\Debug\netcoreapp3.1\Logical.csproj.CopyComplete
+C:\Users\Bridgelabz\Desktop\sumit\Logical\obj\Debug\netcoreapp3.1\Logical.dll
+C:\Users\Bridgelabz\Desktop\sumit\Logical\obj\Debug\netcoreapp3.1\Logical.pdb
