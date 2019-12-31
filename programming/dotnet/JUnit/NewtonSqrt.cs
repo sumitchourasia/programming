@@ -15,7 +15,7 @@ namespace JUnit
 				Console.WriteLine("enter nonnegative number");
 			}
 
-			double sqrt = Utility.Util.CalculateNewtonSqrt((double)c);
+			double sqrt = Utility.Util.CalculateNewtonSqrt(c);
 
 			Console.WriteLine("Newton sqrt : {0} ", sqrt);
 

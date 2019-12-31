@@ -13,14 +13,15 @@ namespace JUnit
             Console.WriteLine(" 4 -> MonthlyPayment program ");
             Console.WriteLine(" 5 -> NewtonSqrt program ");
             Console.WriteLine(" 6 -> ToBinary program ");
-            Console.WriteLine(" 6 ->  program ");
+            Console.WriteLine(" 7 -> ToBinaryAndSwapNibble program ");
 
             int choice = Utility.Util.ReadInt();
 
             switch (choice)
             {
                 case 1:
-                    
+                    VendingMachine vm = new VendingMachine();
+                    vm.VendingMachineMethod();
                     break;
 
                 case 2:
@@ -44,12 +45,13 @@ namespace JUnit
                     break;
 
                 case 6:
-                    ToBinary tobinary = new ToBinary();
+                    ToBInary tobinary = new ToBInary();
                     tobinary.ToBinaryMethod();
                     break;
 
                 case 7:
-
+                    ToBinaryAndSwapNibble tbsn = new ToBinaryAndSwapNibble();
+                    tbsn.ToBinaryAndSwapNibbleMethod();
                     break;
 
                 default:
