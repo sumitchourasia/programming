@@ -16,7 +16,7 @@ namespace JUnit
 
 			binaryarray = Utility.Util.ToBinary(n,binaryarray);
 
-			Utility.Util.PrintArray(binaryarray);
+			Utility.Util.PrintBinaryArray(binaryarray);
 
 			PrintSumOfBinary(binaryarray);
 			//Utility.Util.toBinary(n);

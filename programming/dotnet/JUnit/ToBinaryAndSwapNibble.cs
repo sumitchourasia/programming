@@ -16,13 +16,13 @@ namespace JUnit
             
             Utility.Util.ToBinary(n,binaryarray);
 
-            Utility.Util.PrintArray(binaryarray);
+            Utility.Util.PrintBinaryArray(binaryarray);
 
             SwapNibble(binaryarray,0,4);
 
             Console.WriteLine("After swapping nibble : ");
 
-            Utility.Util.PrintArray(binaryarray);
+            Utility.Util.PrintBinaryArray(binaryarray);
 
             int decimalvalue=ToDecimal(binaryarray);
             
