@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\Utility\\Utility.csproj": {}
+    "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\Utility\\Utility.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\Utility\\Utility.csproj": {
+    "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\Utility\\Utility.csproj",
+        "projectUniqueName": "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\Utility\\Utility.csproj",
+        "projectPath": "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\Utility\\Utility.csproj",
         "packagesPath": "C:\\Users\\Bridgelabz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\Utility\\obj\\",
+        "outputPath": "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\Utility\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",

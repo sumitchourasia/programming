@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\basic\\basic.csproj",
+      "projectUniqueName": "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\basic\\basic.csproj",
       "projectName": "basic",
-      "projectPath": "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\basic\\basic.csproj",
+      "projectPath": "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\basic\\basic.csproj",
       "packagesPath": "C:\\Users\\Bridgelabz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\basic\\obj\\",
+      "outputPath": "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\basic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,8 +52,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\Utility\\Utility.csproj": {
-              "projectPath": "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\Utility\\Utility.csproj"
+            "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\Utility\\Utility.csproj": {
+              "projectPath": "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\Utility\\Utility.csproj"
             }
           }
         }

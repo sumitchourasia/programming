@@ -110,6 +110,21 @@ namespace Utility
             return rd.Next(max);
         }
 
+        /// <summary>
+        /// Prints the one dimensional array.
+        /// </summary>
+        /// <param name="arr">The arr.</param>
+        public static void PrintArray(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write("{0}", arr[i]);
+                if ((i + 1) % 4 == 0)
+                {
+                    Console.Write(" ");
+                }
+            }
+        }
 
 
         /// <summary>
@@ -264,10 +279,14 @@ namespace Utility
             }
         }
 
-
-        public static double CalculateNewtonSqrt(double c)
+        /// <summary>
+        /// Calculates the square root using newton formula method.
+        /// </summary>
+        /// <param name="c">double </param>
+        /// <returns></returns>
+        public static double CalculateNewtonSqrt(int c)
         {
-            double t = c;
+            double t = (double) c;
 
             while (Math.Abs(t - c / t) > Double.Epsilon * t)
             {
@@ -278,6 +297,7 @@ namespace Utility
         }
 
 
+        /*
         public static void toBinary(int n)
         {
             int[] arr = new int[12];
@@ -314,6 +334,50 @@ namespace Utility
 
         }
 
+    */
+
+        /// <summary>
+        /// Calculates the size of the binary array.
+        /// </summary>
+        /// <param name="n">The n (decimal).</param>
+        /// <returns>size of rhe array that is required</returns>
+        public static int CalculateBinaryArraySize(int n)
+        {
+            int count = 0;
+            while (n > 0)
+            {
+                count++;
+                n = n / 2;
+            }
+            int temp1 = count % 4;
+            int temp2 = 0;
+            if (temp1 != 0)
+            {
+                temp2 = 4 - temp1;
+                count += temp2;
+            }
+
+            return count;
+        }
+
+
+        /// <summary>
+        /// Converts to binary.
+        /// </summary>
+        /// <param name="n">The n (decimal)</param>
+        /// <param name="arr">The array to store the binary representation.</param>
+        /// <returns></returns>
+        public static int[] ToBinary(int n, int[] arr)
+        {
+            int i = 0;
+            while (n > 0)
+            {
+                arr[arr.Length - i - 1] = n % 2;
+                i++;
+                n = n / 2;
+            }
+            return arr;
+        }
 
 
 
@@ -321,3 +385,4 @@ namespace Utility
     }//close class util
 
 }//close Utility namespace
+

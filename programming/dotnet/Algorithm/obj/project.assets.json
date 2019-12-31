@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\Algorithm\\Algorithm.csproj",
+      "projectUniqueName": "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\Algorithm\\Algorithm.csproj",
       "projectName": "Algorithm",
-      "projectPath": "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\Algorithm\\Algorithm.csproj",
+      "projectPath": "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\Algorithm\\Algorithm.csproj",
       "packagesPath": "C:\\Users\\Bridgelabz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bridgelabz\\Desktop\\programming\\dotnet\\Algorithm\\obj\\",
+      "outputPath": "C:\\Users\\Bridgelabz\\Desktop\\bridgelabz\\programming\\dotnet\\Algorithm\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
