@@ -111,10 +111,52 @@ namespace Utility
         }
 
         /// <summary>
-        /// Prints the one dimensional array.
+        /// Prints the one dimensional character array.
+        /// </summary>
+        /// <param name="arr">The arr.</param>
+        public static void PrintCharArray(char[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(" {0}", arr[i]);
+            }
+            Console.WriteLine(" ");
+        }
+
+
+
+
+        /// <summary>
+        /// Prints the one dimensional integer array.
         /// </summary>
         /// <param name="arr">The arr.</param>
         public static void PrintArray(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(" {0}", arr[i]);
+            }
+            Console.WriteLine(" ");
+        }
+
+
+
+        public static void PrintStringArray(String[] array)
+        {
+            for(int i=0;i<array.Length;i++)
+            {
+                Console.Write("  {0}",array[i]);
+            }
+            Console.WriteLine("  ");
+        }
+
+
+
+        /// <summary>
+        /// Prints the binary array.
+        /// </summary>
+        /// <param name="arr">The arr.</param>
+        public static void PrintBinaryArray(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {
@@ -124,6 +166,7 @@ namespace Utility
                     Console.Write(" ");
                 }
             }
+            Console.WriteLine(" ");
         }
 
 
@@ -138,8 +181,25 @@ namespace Utility
             {
                intarr[i] = Utility.Util.ReadInt();
             }
-            return ;
+            
         }
+
+
+        /// <summary>
+        /// this method takes string array as parameter and Inputs the string array.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        public static void InputStringArray(String[] array)
+        {
+            for(int i=0;i<array.Length;i++)
+            {
+                array[i] = ReadString();
+            }
+        }
+
+
+
+
 
         /// <summary>
         /// Inputs the distinct array
