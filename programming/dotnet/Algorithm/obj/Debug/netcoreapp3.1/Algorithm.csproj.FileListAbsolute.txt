@@ -9,3 +9,17 @@ C:\Users\Bridgelabz\Desktop\sumit\Algorithm\obj\Debug\netcoreapp3.1\Algorithm.As
 C:\Users\Bridgelabz\Desktop\sumit\Algorithm\obj\Debug\netcoreapp3.1\Algorithm.dll
 C:\Users\Bridgelabz\Desktop\sumit\Algorithm\obj\Debug\netcoreapp3.1\Algorithm.pdb
 C:\Users\Bridgelabz\Desktop\sumit\Algorithm\obj\Debug\netcoreapp3.1\Algorithm.csprojAssemblyReference.cache
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\bin\Debug\netcoreapp3.1\Algorithm.exe
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\bin\Debug\netcoreapp3.1\Algorithm.deps.json
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\bin\Debug\netcoreapp3.1\Algorithm.runtimeconfig.json
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\bin\Debug\netcoreapp3.1\Algorithm.runtimeconfig.dev.json
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\bin\Debug\netcoreapp3.1\Algorithm.dll
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\bin\Debug\netcoreapp3.1\Algorithm.pdb
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\bin\Debug\netcoreapp3.1\Utility.dll
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\bin\Debug\netcoreapp3.1\Utility.pdb
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\obj\Debug\netcoreapp3.1\Algorithm.csprojAssemblyReference.cache
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\obj\Debug\netcoreapp3.1\Algorithm.AssemblyInfoInputs.cache
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\obj\Debug\netcoreapp3.1\Algorithm.AssemblyInfo.cs
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\obj\Debug\netcoreapp3.1\Algorithm.csproj.CopyComplete
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\obj\Debug\netcoreapp3.1\Algorithm.dll
+C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\Algorithm\obj\Debug\netcoreapp3.1\Algorithm.pdb
