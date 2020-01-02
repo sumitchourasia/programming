@@ -2,11 +2,17 @@
   
 namespace JUnit
 {
-    class DayOfWeek
+	/// <summary>
+	/// class to take date as input and print the day.
+	/// </summary>
+	class DayOfWeek
     {
+		/// <summary>
+		/// method to take in the date as input and call the method CalculateDayOfWeek and print it
+		/// </summary>
 		public void DayOFWeekMethod()
 		{
-
+			//input the date month and year.
 			Console.Write("enter the date : ");
 			int date = Utility.Util.ReadInt();
 
@@ -16,6 +22,7 @@ namespace JUnit
 			Console.Write("enter the year : ");
 			int year = Utility.Util.ReadInt();
 
+			//method call
 			CalculateDayOfWeek(date, month, year);
 
 		}
@@ -28,6 +35,7 @@ namespace JUnit
 			int y0 = 0;
 			int x = 0;
 
+			//formulas to calculate the day.
 			y0 = y - (14 - m) / 12;
 
 			x = y0 + (y0 / 4) - (y0 / 100) + (y0 / 400);
@@ -36,6 +44,7 @@ namespace JUnit
 
 			d0 = (d + x + (31 * m0) / 12) % 7;
 
+			//DayOfWeek is selected on the basic of d0 value. sunday for 0 and so on.
 			switch (d0)
 			{
 				case 0:

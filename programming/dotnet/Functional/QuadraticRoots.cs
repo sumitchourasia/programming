@@ -3,6 +3,9 @@
 
 namespace Functional
 {
+    /// <summary>
+    /// used to stroe the two roots of the given quadratic co-efficient
+    /// </summary>
     struct Roots
     {
         public double root1;
@@ -28,6 +31,7 @@ namespace Functional
 
             //method to find quadratic equation
             roots = FindQuadraticRoots(a, b, c);
+
             if (roots.root1 != 0.0 && roots.root2 != 0.0)
             {
                 Console.WriteLine("Root1 : {0}", roots.root1);
@@ -52,7 +56,7 @@ namespace Functional
             Roots roots = new Roots();
 
             double delta = ((b * b) - (4 * a * c));
-
+            //check if the roots are complex or real number.
             if (delta >= 0)
             {
                 roots.root1 = (-b + Math.Sqrt(delta)) / (2 * a);

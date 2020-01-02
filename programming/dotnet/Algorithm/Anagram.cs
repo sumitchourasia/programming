@@ -47,18 +47,24 @@ namespace Algorithm
             else
             {
                 bool flag = true;
+                //character array to store the string1 as character
                 char[] chararr1 = new char[str1.Length]; 
                 chararr1 = str1.ToCharArray();
 
+                //charcter array to store the string2 as character 
                 char[] chararr2 = new char[str2.Length];
                 chararr2 = str2.ToCharArray();
+
 
                 for(int i=0 ; i<chararr1.Length ; i++)
                 {
                     for(int j=0 ; j<chararr2.Length ; j++)
                     {
+                        //compare each element of chararr1 with all the elements of chararr2
+                        //where element is not a space character.
                         if (chararr1[i] == chararr2[j] && chararr1[i]!=' ')
                         {
+                            //if found equal then replace with space character
                             chararr1[i] = ' ';
                             chararr2[j] = ' ';
                             break;
@@ -66,8 +72,12 @@ namespace Algorithm
                     }
                 }
 
+                //check if all characters of both the array are spaces.
+                //this indicates that all the characters has matched in both the array.
                 for(int i=0;i<chararr1.Length;i++)
                 {
+                    //if any one character remains that is not a space character this indicates that 
+                    //all characters in both the array did not match.
                     if (chararr1[i] != ' ' || chararr2[i] != ' ')
                     {
                         return false;

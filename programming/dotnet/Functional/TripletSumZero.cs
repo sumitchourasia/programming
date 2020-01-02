@@ -44,6 +44,7 @@ namespace Functional
                 {
                     for (int k = j; k < arr.Length; k++)
                     {
+                        // check if the sum equates to zero and check if the integers are distinct.
                         if (arr[i] + arr[j] + arr[k] == 0 && arr[i] != arr[j] && arr[i] != arr[k] && arr[j] != arr[k])
                         {
                             count++;

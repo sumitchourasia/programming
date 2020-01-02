@@ -8,6 +8,10 @@ namespace JUnit
     /// </summary>
     class VendingMachine
     {
+        /// <summary>
+        /// Vendings the machine method is used to take the amount from user and provide the user with minimum number of notes
+        /// and also prints the notes of all the denomination and minimum number of notes.
+        /// </summary>
         public void VendingMachineMethod()
         {
             Console.WriteLine("enter the amount to get the change : ");
@@ -21,7 +25,7 @@ namespace JUnit
         }
 
         /// <summary>
-        /// Gets the change using iterative method.
+        /// this method prints the change using iterative method.
         /// </summary>
         /// <param name="money">The total amount is passed as argument.</param>
         void getChange(int money)
@@ -56,7 +60,7 @@ namespace JUnit
         }
 
         /// <summary>
-        /// Gets the change using recusion.
+        /// this method prints the change using recusion.
         /// </summary>
         /// <param name="amount">The amount.</param>
         /// <param name="denomination">The denomination.</param>
@@ -64,14 +68,13 @@ namespace JUnit
         /// <returns></returns>
         int GetChangeRecusion(int amount,int denomination,int totalnotes)
         {
-           
+           //termination condition.
             if (amount<1)
             {
                 return totalnotes;
             }
             else
             {
-               
                 int notes = amount / denomination;
                 amount = amount % denomination;
                 totalnotes += notes;
@@ -94,10 +97,6 @@ namespace JUnit
             }
 
         }
-
-
-
-
     }
 }
 

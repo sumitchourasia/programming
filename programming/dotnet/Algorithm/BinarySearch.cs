@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Algorithm
 {
+    /// <summary>
+    /// BinarySearch class 
+    /// </summary>
     class BinarySearch
     {
         public void BinarySearchMethod()

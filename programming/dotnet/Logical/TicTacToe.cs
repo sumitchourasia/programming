@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace Logical
 {
@@ -184,12 +183,6 @@ namespace Logical
 
 			return 0;
 		}
-
-		
-
-
-
-
 
 	}
 }

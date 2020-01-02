@@ -140,7 +140,10 @@ namespace Utility
         }
 
 
-
+        /// <summary>
+        /// Prints the string array.
+        /// </summary>
+        /// <param name="array">The array.</param>
         public static void PrintStringArray(String[] array)
         {
             for(int i=0;i<array.Length;i++)
@@ -409,6 +412,7 @@ namespace Utility
                 count++;
                 n = n / 2;
             }
+            //append the extra bits to make it a complete nibble.
             int temp1 = count % 4;
             int temp2 = 0;
             if (temp1 != 0)
@@ -532,7 +536,29 @@ namespace Utility
             }
         }
 
+        /// <summary>
+        /// Determines whether the specified n is prime.
+        /// return a boolean value
+        /// </summary>
+        /// <param name="n">The n.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified n is prime; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsPrime(int n)
+        {
+            bool flag = true;
 
+            for (int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if (n % i == 0)
+                {
+                    flag = false;
+                    return flag;
+                }
+            }
+
+            return flag;
+        }
 
 
 

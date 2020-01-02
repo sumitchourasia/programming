@@ -11,7 +11,7 @@ namespace Algorithm
             Console.WriteLine(" 2 -> Binary Search the Word from Word List program ");
             Console.WriteLine(" 3 -> Insertion Sort program ");
             Console.WriteLine(" 4 -> Bubble Sort program ");
-            Console.WriteLine(" 5 ->   program ");
+            Console.WriteLine(" 5 -> Merger Sort program ");
             Console.WriteLine(" 6 -> Anagram Detection program ");
             Console.WriteLine(" 7 -> Prime Number program ");
             Console.WriteLine(" 8 ->   program ");
@@ -44,6 +44,11 @@ namespace Algorithm
                     bubblesort.BubbleSortMethod();
                     break;
 
+                case 5:
+                    MergeSort mergesort = new MergeSort();
+                    mergesort.MergeSortMethod();
+                    break;
+
                 case 6:
                     Anagram anagram = new Anagram();
                     anagram.AnagramMethod();
@@ -52,6 +57,11 @@ namespace Algorithm
                 case 7:
                     PrimeNumber prime = new PrimeNumber();
                     prime.PrimeNumberMethod();
+                    break;
+
+                case 8:
+                    PalindromeAndAnagram pna = new PalindromeAndAnagram();
+                    pna.PalindromeAndAnagramMethod();
                     break;
 
                 default :

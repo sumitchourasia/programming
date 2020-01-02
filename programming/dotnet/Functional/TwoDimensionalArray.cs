@@ -2,8 +2,15 @@
 
 namespace Functional
 {
+    /// <summary>
+    /// class to call store and display the the different types of array i.e integer ,double ,boolean array.
+    /// </summary>
     class TwoDimensionalArray
     {
+        /// <summary>
+        ///this method lets user select the choice of array (using switch cases) 
+        ///and then takes in the array element and prints it.
+        /// </summary>
         public void TwoDIntArray( )
         {
            

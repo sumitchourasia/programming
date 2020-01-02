@@ -7,13 +7,19 @@ namespace basic
     /// </summary>
     class LeapYear
     {
+        /// <summary>
+        /// this method takes input from the user and calls the method checkLeapYear() and prints the result.
+        /// </summary>
         public void LeapYearMethod()
         {
             Console.WriteLine("Enter the year : ");
 
             int  year = Utility.Util.ReadInt( );
+
+            //input validation
             if (year > 999 && year < 10000)
             {
+                //method call to check leap year.
                 if (CheckLeapYear(year))
                 {
                     Console.WriteLine("{0} is a leap year ", year);

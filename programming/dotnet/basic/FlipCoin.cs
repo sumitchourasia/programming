@@ -19,9 +19,13 @@ namespace basic
 
             int times = Utility.Util.ReadInt();
 
+           //method call
             double headpercentage = PercentageOfHead(times);
 
+            //print percentage of heads.
             Console.WriteLine("head percentage : {0}", headpercentage);
+            
+            //print percentage of tails.
             Console.WriteLine("tail percentage : {0}", 100 - headpercentage);
             
         }
@@ -39,10 +43,11 @@ namespace basic
             int heads = 0;
             Random rd = new Random();
             int random = 0;
+
             while (i<=times)
             {
                 random = rd.Next(0, 2);
-
+                //if the generated random number is 1 then increase the counter for heads. 
                 if (random == 1)
                 {
                     heads++;
@@ -50,7 +55,7 @@ namespace basic
 
                 i++;
             }
-
+            //calculate the percentage of heads.
             double headpercentage = ((double)heads / times) * 100 ;
 
             return headpercentage;

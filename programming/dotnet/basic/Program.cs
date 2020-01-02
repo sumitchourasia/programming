@@ -9,7 +9,10 @@ namespace basic
     /// </summary>
     public class Program
     {
-        public static void Main(string[] args)
+        /// <summary>
+        /// Defines the entry point of the application and works as the driver method for basic section programs
+        /// </summary>
+        public static void Main( )
         {
             Console.WriteLine(" Enter your choice ");
             Console.WriteLine(" 1 -> Replace program ");

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace basic
 {
@@ -40,7 +38,7 @@ namespace basic
 
             if (power == 0 )
             {
-                Console.WriteLine("{0} to the power of {1} is : {2}", baseValue,power, temp);
+                Console.WriteLine("{0} to the power of {1} is : {2}", baseValue,power,temp);
             }
             else
             {   

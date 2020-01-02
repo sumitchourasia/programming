@@ -2,8 +2,15 @@
 
 namespace Functional
 {
+    /// <summary>
+    /// this works as the driver class 
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Defines the entry point of the application and works as the driver method.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
         static void Main(string[] args)
         {
             Console.WriteLine("enter your choice : ");
