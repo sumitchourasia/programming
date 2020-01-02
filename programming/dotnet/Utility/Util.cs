@@ -2,7 +2,7 @@
 
 namespace Utility
 {
-    public static class Util
+    public class Util
     {
             /// <summary>
             /// Reads the int.
@@ -438,6 +438,105 @@ namespace Utility
             }
             return arr;
         }
+
+
+        /// <summary>
+        /// Does the insertion sort.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        public static void DoInsertionSort(String[] array)
+        {
+            int j = 0;
+            String key = "";
+            for (int i = 0; i < array.Length; i++)
+            {
+                key = array[i];
+                j = i - 1;
+                while (j >= 0)
+                {
+                    if (array[j].CompareTo(key) == 1)
+                    {
+                        array[j + 1] = array[j];
+                        j--;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                array[j + 1] = key;
+            }
+
+        }
+
+
+
+
+        /// <summary>
+        /// Factorials the specified n.
+        /// takes integer as parameter and returns an integer
+        /// </summary>
+        /// <param name="n">The n.</param>
+        /// <returns></returns>
+        public static int factorial(int n)
+        {
+            if (n <= 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return n * factorial(n - 1);
+            }
+
+        }
+
+
+        /// <summary>
+        /// Checks the two distinct string array are equal or not.
+        /// take two string array and compares them
+        /// </summary>
+        /// <param name="arr1">The arr1.</param>
+        /// <param name="arr2">The arr2.</param>
+        /// <returns></returns>
+        public static bool CheckTwoDistinctStringArrayEqual(string[] arr1, string[] arr2)
+        {
+            if (arr1.Length != arr2.Length)
+            {
+                return false;
+            }
+            else
+            {
+                int count = 0;
+
+                for (int i = 0; i < arr1.Length; i++)
+                {
+
+                    for (int j = 0; j < arr2.Length; j++)
+                    {
+
+                        if (arr1[i] == arr2[j])
+                        {
+                            count++;
+                        }
+                    }
+                }
+                if (count == arr1.Length)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+
+
+
+
+
 
 
 
