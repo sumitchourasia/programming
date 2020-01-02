@@ -20,6 +20,7 @@ namespace Algorithm
             Console.WriteLine("enter the second string ");
             string str2 = Utility.Util.ReadString();
 
+            //method call to check if two strings are anagram.
             if(CheckAnagram(str1,str2))
             {
                 Console.WriteLine(" is anagram ");

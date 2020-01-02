@@ -3,7 +3,8 @@
 namespace Algorithm
 {
     /// <summary>
-    /// Mergesort class is used to take string array as input and sorts it in nlogn time-complexity.
+    /// Mergesort class is used to take string array as input and sorts it 
+    /// it takes O(nlogn) time-complexity in all cases once the algorithm starts there is no return in between.
     /// </summary>
     class MergeSort 
     {
