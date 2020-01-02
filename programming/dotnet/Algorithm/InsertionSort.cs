@@ -5,7 +5,10 @@ using System.Text;
 namespace Algorithm
 {
     class InsertionSort
-    { 
+    {
+        /// <summary>
+        ///  this method takes the array elements as input and calls DoInsertionSort method to sort the given array.
+        /// </summary>
         public void InsertionSortMethod()
         {
             Console.Write("enter the size ot String array : ");
@@ -19,37 +22,14 @@ namespace Algorithm
             Console.Write(" entered array is : ");
             Utility.Util.PrintStringArray(array);
 
-            DoInsertionSort(array);
+            Utility.Util.DoInsertionSort(array);
 
             Console.Write("after insertion sort : ");
             Utility.Util.PrintStringArray(array);
 
         }
 
-        void DoInsertionSort(String[] array)
-        {
-            int j = 0;
-            String key ="";
-            for(int i=0;i<array.Length;i++)
-            {
-                key = array[i];
-                j = i-1;
-                while(j>=0)
-                {
-                    if(array[j].CompareTo(key)==1)
-                    {
-                        array[j + 1] = array[j];
-                        j--;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                array[j + 1] = key;
-            }
 
-        }
 
     }
 }

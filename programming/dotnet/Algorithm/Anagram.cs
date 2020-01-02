@@ -4,8 +4,14 @@ using System.Text;
 
 namespace Algorithm
 {
+    /// <summary>
+    /// this class is used to check if two given string are anagram or not
+    /// </summary>
     class Anagram
     {
+        /// <summary>
+        /// this method takes two string input from the user and calls the checkAnagram method 
+        /// </summary>
         public void AnagramMethod()
         {
             Console.WriteLine("enter first string ");
@@ -24,6 +30,14 @@ namespace Algorithm
             }
         }
 
+
+        /// <summary>
+        /// this method takes two string paramters and Checks whether two string the anagram
+        /// and return boolean value
+        /// </summary>
+        /// <param name="str1">The STR1.</param>
+        /// <param name="str2">The STR2.</param>
+        /// <returns></returns>
         bool CheckAnagram(string str1,string str2)
         {
             if(str1.Length != str2.Length)

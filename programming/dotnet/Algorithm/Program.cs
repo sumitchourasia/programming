@@ -13,7 +13,7 @@ namespace Algorithm
             Console.WriteLine(" 4 -> Bubble Sort program ");
             Console.WriteLine(" 5 ->   program ");
             Console.WriteLine(" 6 -> Anagram Detection program ");
-            Console.WriteLine(" 7 ->   program ");
+            Console.WriteLine(" 7 -> Prime Number program ");
             Console.WriteLine(" 8 ->   program ");
             Console.WriteLine(" 9 ->   program ");
             Console.WriteLine(" 10 ->   program ");
@@ -29,6 +29,11 @@ namespace Algorithm
                     StringPermutation sp = new StringPermutation();
                     sp.StringPermutationMethod();
                     break;
+
+                case 2:
+                    BinarySearch binarysearch = new BinarySearch();
+                    binarysearch.BinarySearchMethod();
+                    break;
                 case 3:
                     InsertionSort insertionsort = new InsertionSort();
                     insertionsort.InsertionSortMethod();
@@ -42,6 +47,11 @@ namespace Algorithm
                 case 6:
                     Anagram anagram = new Anagram();
                     anagram.AnagramMethod();
+                    break;
+
+                case 7:
+                    PrimeNumber prime = new PrimeNumber();
+                    prime.PrimeNumberMethod();
                     break;
 
                 default :
