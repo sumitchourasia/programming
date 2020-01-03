@@ -644,7 +644,43 @@ namespace Utility
         }
 
 
-        }//close class util
+        /// <summary>
+        /// Prints the prime number in 2d array.
+        /// after 0 no elements get printed.
+        /// </summary>
+        /// <param name="PrimeArray">The prime array.</param>
+        public static void PrintPrimeNumberIn2D(int[][] Array)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 100; j++)
+                {
+                    if (Array[i][j] != 0)
+                    {
+                        Console.Write(" {0}",Array[i][j]);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                Console.WriteLine(" ");
+            }
+
+           
+
+        }
+
+
+
+
+
+
+
+
+
+
+    }//close class util
 
     }//close Utility namespace
 
