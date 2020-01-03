@@ -14,11 +14,11 @@ namespace Algorithm
             Console.WriteLine(" 5 -> Merger Sort program ");
             Console.WriteLine(" 6 -> Anagram Detection program ");
             Console.WriteLine(" 7 -> Prime Number program ");
-            Console.WriteLine(" 8 ->   program ");
-            Console.WriteLine(" 9 ->   program ");
-            Console.WriteLine(" 10 ->   program ");
-            Console.WriteLine(" 11 ->   program ");
-            Console.WriteLine(" 12 ->   program ");
+            Console.WriteLine(" 8 -> Primenumber_Palindrome_Anagram  program ");
+            Console.WriteLine(" 9 ->                           program ");
+            Console.WriteLine("10 -> Guess Number Game program ");
+            Console.WriteLine("11 -> ListOfTask program ");
+            Console.WriteLine("12 ->                           program ");
 
             Console.Write("enter your choice : ");
             int choice = Utility.Util.ReadInt();
@@ -64,6 +64,15 @@ namespace Algorithm
                     pna.PalindromeAndAnagramMethod();
                     break;
 
+                case 10:
+                    GuessNumber guessnumber = new GuessNumber();
+                    guessnumber.GuessNumberMethod();
+                    break;
+
+                case 11:
+                    ListOfTask lot = new ListOfTask();
+                    lot.ListOfTaskMethod();
+                    break;
                 default :
 
                     break;

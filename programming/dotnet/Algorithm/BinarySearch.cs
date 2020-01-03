@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Algorithm
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace Algorithm
             //utility method to sort the inputed string array using insertion sort
             Utility.Util.DoInsertionSort(strarray);
 
-            //Utility method to print the sorted string array.
+            ////Utility method to print the sorted string array.
             Utility.Util.PrintStringArray(strarray);
 
             //take the data from the keyboard to look for in the sorted array 

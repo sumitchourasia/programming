@@ -31,38 +31,13 @@ namespace Algorithm
             Utility.Util.PrintArray(array);
 
             //method to sort the given array using bubble sort.
-            DoBubbleSort(array);
+            Utility.Util.DoBubbleSort(array);
 
             Console.Write("sorted array is : ");
             //utility method to print the sorted array.
             Utility.Util.PrintArray(array);
 
         }
-
-        /// <summary>
-        /// this method accepts a array of type int. and sort the passed array in ascending order.
-        /// </summary>
-        /// <param name="arr">The arr.</param>
-        void DoBubbleSort(int[] arr)
-        {
-            int temp = 0;
-
-            //loop through the array.
-            for(int i=0;i<arr.Length-1;i++)
-            {
-                for(int j=0;j<arr.Length-1-i;j++)
-                {    
-                    //if condition satisfies then swap the elements.
-                    if (arr[j]>=arr[j+1])
-                    {
-                        temp = arr[j];
-                        arr[j] = arr[j+1];
-                        arr[j + 1] = temp;
-                    }
-                }
-            }
-        }
-
 
     }
 }
