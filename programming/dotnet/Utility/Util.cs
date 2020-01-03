@@ -445,6 +445,31 @@ namespace Utility
 
 
         /// <summary>
+        /// this method accepts a array of type int. and sort the passed array in ascending order.
+        /// </summary>
+        /// <param name="arr">The arr.</param>
+        public static void DoBubbleSort(int[] arr)
+        {
+            int temp = 0;
+
+            //loop through the array.
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    //if condition satisfies then swap the elements.
+                    if (arr[j] >= arr[j + 1])
+                    {
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+        }
+
+
+        /// <summary>
         /// Does the insertion sort.
         /// </summary>
         /// <param name="array">The array.</param>
@@ -562,12 +587,64 @@ namespace Utility
 
 
 
+        /// <summary>
+        /// this method takes two string paramters and Checks whether two string the anagram
+        /// and return boolean value
+        /// </summary>
+        /// <param name="str1">The STR1.</param>
+        /// <param name="str2">The STR2.</param>
+        /// <returns></returns>
+        public static bool CheckAnagram(string str1, string str2)
+        {
+            if (str1.Length != str2.Length)
+            {
+                return false;
+            }
+            else
+            {
+                bool flag = true;
+                //character array to store the string1 as character
+                char[] chararr1 = new char[str1.Length];
+                chararr1 = str1.ToCharArray();
+
+                //charcter array to store the string2 as character 
+                char[] chararr2 = new char[str2.Length];
+                chararr2 = str2.ToCharArray();
 
 
+                for (int i = 0; i < chararr1.Length; i++)
+                {
+                    for (int j = 0; j < chararr2.Length; j++)
+                    {
+                        //compare each element of chararr1 with all the elements of chararr2
+                        //where element is not a space character.
+                        if (chararr1[i] == chararr2[j] && chararr1[i] != ' ')
+                        {
+                            //if found equal then replace with space character
+                            chararr1[i] = ' ';
+                            chararr2[j] = ' ';
+                            break;
+                        }
+                    }
+                }
+
+                //check if all characters of both the array are spaces.
+                //this indicates that all the characters has matched in both the array.
+                for (int i = 0; i < chararr1.Length; i++)
+                {
+                    //if any one character remains that is not a space character this indicates that 
+                    //all characters in both the array did not match.
+                    if (chararr1[i] != ' ' || chararr2[i] != ' ')
+                    {
+                        return false;
+                    }
+                }
+                return flag;
+            }
+        }
 
 
+        }//close class util
 
-    }//close class util
-
-}//close Utility namespace
+    }//close Utility namespace
 
