@@ -36,7 +36,7 @@ namespace DataStructures
             }
 
                 Console.WriteLine("\n primes are : ");
-                Utility.Util.PrintPrimeNumberIn2D(PrimeArray);
+                Utility.PrintPrimeNumberIn2D(PrimeArray);
 
                 Console.WriteLine("\n \n method call anagrams are : ");
 
@@ -68,7 +68,7 @@ namespace DataStructures
                     int n = 0;
                     for (int j = 0; j < 100; j++)
                     {
-                        if (Utility.Util.IsPrime(number))
+                        if (Utility.IsPrime(number))
                         {
                             Array[m][n] = number;
                             n++;
@@ -95,7 +95,7 @@ namespace DataStructures
                         {
                             str2 = Convert.ToString(PrimeArray[p][q]);
 
-                            if (Utility.Util.CheckAnagram(str1, str2) && !str1.Equals(str2))
+                            if (Utility.CheckAnagram(str1, str2) && !str1.Equals(str2))
                             {
                                 AnagramArray[p][q] = PrimeArray[p][q];
                                 return;

@@ -22,7 +22,7 @@ namespace DataStructures
                 int n = 0;
                 for (int j=0;j<100;j++)
                 {
-                    if(Utility.Util.IsPrime(number))
+                    if(Utility.IsPrime(number))
                     {
                         array[m][n] = number;
                         n++;
@@ -33,7 +33,7 @@ namespace DataStructures
             }
 
             ////to print the prime numbers in the 2d array except 0.
-            Utility.Util.PrintPrimeNumberIn2D(array);
+            Utility.PrintPrimeNumberIn2D(array);
 
         }
 
