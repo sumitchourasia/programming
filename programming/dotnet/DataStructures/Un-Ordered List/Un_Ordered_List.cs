@@ -47,32 +47,18 @@ namespace DataStructures.Un_Ordered_List
             if(!found)
             {
                 Head = Utility.Add(Head,newnode);
-                Utility.PrintLinkedList(Head);
             }
             else
             {
-               Console.WriteLine(Utility.Index(Head,newnode));
-                //Pop(newnode);
+                int index = Utility.Index(Head, newnode);
+                Console.WriteLine(" index is : "+index);
+                ListNode<T> data =Utility.Pop(ref Head,index);
+                Console.WriteLine("popped data is : {0} ",data.data);
             }
-        }
 
+            Console.WriteLine(" list to store in file is : ");
+            Utility.PrintLinkedList(Head);
 
-
-
-
-
-
-
-
-
-
-        public static ListNode<T> Pop(ListNode<T> head,ListNode<T> node)
-        {
-            if(head == null)
-            {
-                return null;
-            }
-            return null;
         }
 
 
