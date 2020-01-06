@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.ComponentModel;
 
 namespace DataStructures
 {
@@ -36,6 +37,16 @@ namespace DataStructures
             }
         }
 
+
+
+        public static Boolean CanCovert(String value, Type type)
+        {
+            TypeConverter converter = TypeDescriptor.GetConverter(type);
+            return converter.IsValid(value);
+        }
+
+
+
         public static void PrintArray<T>(T[] array)
         {
             for (int i = 0; i < array.Length; i++)
@@ -47,38 +58,39 @@ namespace DataStructures
             }
         }
 
+
+
         public static void ReadFileIntoArray<T>(string path, T[] array)
         {
             StreamReader SR = new StreamReader(path);
-            T data; 
 
             for (int i = 0; i < array.Length; i++)
             {
-                data =(T)((object) SR.ReadLine());
-                
+                string data = SR.ReadLine();
                 if (data != null)
-                {
-                    array[i] = (T)data;
-                }
+                    array[i] = (T)(object)data;
                 else
-                {
                     break;
-                }
             }
+
             SR.Close();
         }
+
+       
+
 
 
         public static ListNode<T> ArrayToLinkedList<T>(ListNode<T> head, T[] array)
         {
             ListNode<T> newnode = null;
+            string data;
             for (int i = 0; i < array.Length; i++)
             {
-                T data = array[i];
+                data =  (string)((object)array[i]);
                 if (data != null)
                 {
                     newnode = new ListNode<T>();
-                    newnode.data = data;
+                    newnode.data = (T)((object)data);
                     head = Add(head, newnode);
                 }
                 else
@@ -88,6 +100,50 @@ namespace DataStructures
             }
             return head;
         }
+
+
+            public static ListNode<T> ArrayToOrderedLinkedList<T>(ListNode<T> head, T[] array)
+            {
+                    ListNode<T> newnode = null;
+                    string data;
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        data = (string)((object)array[i]);
+                        if (data != null)
+                        {
+                            newnode = new ListNode<T>();
+                            newnode.data = (T)((object)data);
+                            head = AddInOrder(head, newnode);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    return head;
+             }
+
+        public static void LinkedListToFile<T>(ListNode<T> head, string path)
+        {
+            StreamWriter SW = new StreamWriter(path);
+
+            if (head == null || !File.Exists(path))
+            {
+                Console.WriteLine("head is null or file doesnot exist");
+            }
+            else
+            {
+                ListNode<T> temp = head;
+
+                while (temp != null)
+                {
+                    SW.WriteLine((string)((object)temp.data), true);
+                    temp = temp.next;
+                }
+            }
+            SW.Close();
+        }
+
 
 
 
@@ -114,8 +170,105 @@ namespace DataStructures
             return head;
         }
 
+        /*
+         *  if (head == null)
+            {
+                head = newnode;
+                return head;
+            }
+
+            int newdata = 0;
+            int data = 0;
+            ListNode<T> temp = head;
+            newdata = Convert.ToInt32(newnode.data);
+            data = Convert.ToInt32(head.data);
+
+            if (newdata < data)
+            {
+                newnode.next = head;
+                head = newnode;
+                return head;
+            }
+            else
+            {
+                temp = head;
+                newdata = Convert.ToInt32(newnode.data);
+                data = Convert.ToInt32(temp.data);
+              
+                while (temp.next != null)
+                {
+                  
+                    data = Convert.ToInt32(temp.data);
+
+                    if (newdata < data)
+                    {
+                        newnode.next = temp.next;
+                        temp = newnode;
+                        break;
+                    }
+                    
+                    temp = temp.next;
+                }
+
+                if (temp.next == null)
+                {
+                    temp.next = newnode;
+                }
 
 
+            }
+            return head;
+
+         * 
+         * 
+         * 
+         * 
+         * 
+         * */
+
+
+
+
+        /// <summary>
+        /// Adds the new node in ascending order in the linked list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="head">The head.</param>
+        /// <param name="newnode">The newnode.</param>
+        /// <returns></returns>
+        public static ListNode<T> AddInOrder<T>(ListNode<T> head, ListNode<T> newnode)
+        {
+            if(head == null)
+            {
+                head = newnode;
+            }
+            else
+            {
+                ListNode<T> temp = head;
+                if(Convert.ToInt32(head.data)>Convert.ToInt32(newnode.data))
+                {
+                    newnode.next = head;
+                    head = newnode;
+                }
+                else
+                {
+                    temp = head;
+                    while(temp.next != null)
+                    {
+                        if(Convert.ToInt32(temp.next.data) > Convert.ToInt32(newnode.data))
+                        {
+                            newnode.next = temp.next;
+                            temp.next = newnode;
+                            break;
+                        }
+                        temp = temp.next;
+                    }
+                    temp.next = newnode;
+                }
+
+            }
+            return head;
+        }
 
 
         public static void PrintLinkedList<T>(ListNode<T> head)
@@ -186,18 +339,19 @@ namespace DataStructures
 
             if (head == null)
             {
-                return index + 1;
+                return index;
             }
             else
             {
+                index = 0;
                 ListNode<T> temp = head;
                 while (temp != null)
                 {
-                    index++;
                     if ((temp.data).Equals(item.data))
                     {
                         return index;
                     }
+                    index++;
                     temp = temp.next;
                 }
             }
@@ -205,19 +359,76 @@ namespace DataStructures
         }
 
 
+        /// <summary>
+        /// calculate the size of linked list
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        public static int ListSize<T>(ListNode<T> head)
+        {
+            int size = -1;
+
+            if (head == null)
+            {
+                size = 1;
+                return size;
+            }
+            else
+            {
+                ListNode<T> temp = head;
+
+                while (temp != null)
+                {
+                    size++;
+                    temp = temp.next;
+                }
+
+            }
+
+            return size;
+        }
 
 
 
 
+        public static ListNode<T> Pop<T>(ref ListNode<T> head, int index)
+        {
+            ListNode<T> temp;
+            ListNode<T> item;
+            ref ListNode<T> refhead = ref head;
+            int size = Utility.ListSize(head);
 
+            if (head == null)
+            {
+                return null;
+            }
+            else if(index == 0)
+            {
+                item = head;
+                refhead = head.next;
+                return item;
+            }
+            else
+            {
+                temp = head;
+                for (int i = 0; i < index - 1; i++)
+                {
+                    temp = temp.next;
+                }
+                item = temp.next;
+                if (temp.next.next == null)
+                {
+                    temp.next = null;
+                }
+                else
+                {
+                    temp.next = temp.next.next;
+                }
 
+            }
 
-
-
-
-
-
-
+            return item; 
+        }
 
 
 
@@ -669,12 +880,47 @@ namespace DataStructures
                 }
             }
 
+        /// <summary>
+        /// this method accepts a generics array of type int. and sort the passed array in ascending order.
+        /// </summary>
+        /// <param name="arr">The arr.</param>
+        public static void DoBubbleSort<T>(T[] arr)
+        {
+            T temp;
 
-            /// <summary>
-            /// Does the insertion sort.
-            /// </summary>
-            /// <param name="array">The array.</param>
-            public static void DoInsertionSort(String[] array)
+            //loop through the array.
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    //if condition satisfies then swap the elements.
+                    int newdata = 0;
+                    bool nsuccess = Int32.TryParse((string)((object)arr[j]),out newdata);
+                    int data = 0;
+                    bool success = Int32.TryParse((string)((object)arr[j+1]),out data);
+                    if (success && nsuccess)
+                    {
+                        if (data >= newdata)
+                        {
+                            temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+        /// <summary>
+        /// Does the insertion sort.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        public static void DoInsertionSort(String[] array)
             {
                 int j = 0;
                 String key = "";

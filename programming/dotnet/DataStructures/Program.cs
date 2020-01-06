@@ -8,6 +8,7 @@ namespace DataStructures
         {
             Console.WriteLine("enter your choice : ");
             Console.WriteLine(" 1 -> Un_Ordered_List Program ");
+            Console.WriteLine(" 2 -> Ordered_List Program ");
             Console.WriteLine(" 8 -> PrimeNumbersIn2D program ");
             Console.WriteLine(" 9 -> primeNumberAnagram2D program ");
             Console.WriteLine(" 3 -> ");
@@ -25,7 +26,8 @@ namespace DataStructures
                         break;
 
                     case 2:
-
+                    DataStructures.Ordered_List.Ordered_List<string> orderlist = new DataStructures.Ordered_List.Ordered_List<string>();
+                    orderlist.Ordered_ListMethod();
                         break;
 
                     case 3:
