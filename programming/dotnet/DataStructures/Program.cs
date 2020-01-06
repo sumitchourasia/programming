@@ -31,11 +31,13 @@ namespace DataStructures
                         break;
 
                     case 3:
-
+                    BalancedParanthesis.Balanced_Paranthesis<char> balParan = new BalancedParanthesis.Balanced_Paranthesis<char>();
+                    balParan.BalancedParanthesisMethod();
                         break;
 
                     case 4:
-
+                    BankingCashCounter.BankingCashCounter<int> BankQueue = new BankingCashCounter.BankingCashCounter<int>();
+                    BankQueue.BankingMethod();
                         break;
 
                     case 8:

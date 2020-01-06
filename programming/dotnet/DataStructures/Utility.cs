@@ -37,7 +37,134 @@ namespace DataStructures
             }
         }
 
+        public static Queue<T> CreateQueue<T>()
+        {
+            Queue<T> Q = new Queue<T>();
+            Q.Capacity = 10;
+            Q.Front = -1;
+            Q.Rear = -1;
+            Q.Array = new T[Q.Capacity];
 
+            return Q;
+        }
+
+
+        public static bool IsEmptyQueue<T>(Queue<T> Q)
+        {
+            return Q.Front == -1 && Q.Rear == -1;
+        }
+
+        public static bool IsFullQueue<T>(Queue<T> Q)
+        {
+            return ((Q.Rear + 1) % Q.Capacity == Q.Front);
+        }
+
+        public static int QueueSize<T>(Queue<T> Q)
+        {
+            return (Q.Capacity - Q.Front + Q.Rear + 1) % Q.Capacity;
+        }
+
+
+        public static void Enque<T>(Queue<T> Q, T Data)
+        {
+            if (Utility.IsFullQueue<T>(Q))
+            {
+                Console.WriteLine("queue is full");
+                return;
+            }
+            else
+            {
+                Q.Rear = (Q.Rear + 1) % Q.Capacity;
+                Q.Array[Q.Rear] = Data;
+            }
+
+            if (Q.Front == -1)
+            {
+                Q.Front = Q.Rear;
+            }
+        }
+
+
+        public static string Deque<T>(Queue<T> Q)
+        {
+            if (Utility.IsEmptyQueue<T>(Q))
+            {
+                Console.WriteLine("queue underflow");
+                return null;
+            }
+            else
+            {
+                return (string)((Object)Q.Array[Q.Front++]);
+            }
+
+        }
+
+
+
+
+        /// <summary>
+        /// Creates the array stack.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static Stack<T> CreateArrayStack<T>()
+        {
+            Stack<T> stack = new Stack<T>();
+            stack.Capacity = 10;
+            stack.Top = -1;
+            stack.Array = new T[stack.Capacity];
+
+            return stack;
+        }
+
+        public static bool IsEmptyStack<T>(Stack<T> S)
+        {
+            return S.Top == -1;
+        }
+
+        public static bool IsFullStack<T>(Stack<T> S)
+        {
+            return S.Capacity - 1 == S.Top;
+        }
+
+        public static string Peek<T>(Stack<T> S)
+        {
+            if (IsEmptyStack(S))
+            {
+                return null;
+            }
+            else
+            {
+                return S.Array[S.Top].ToString();
+            }
+        }
+
+        public static void Push<T>(Stack<T> S, T data)
+        {
+            if (IsFullStack(S))
+            {
+                Console.WriteLine("stack overflow");
+                return;
+            }
+            else
+            {
+                S.Array[++S.Top] = data;
+            }
+        }
+
+
+        public static string Pop<T>(Stack<T> S)
+        {
+            if (IsEmptyStack(S))
+            {
+                Console.WriteLine("stack underflow");
+                return null;
+            }
+            else
+            {
+                return S.Array[S.Top--].ToString();
+            }
+        }
 
         public static Boolean CanCovert(String value, Type type)
         {
