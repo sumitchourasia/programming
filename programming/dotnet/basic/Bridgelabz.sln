@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithm", "..\Algorithm\A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JUnit", "..\JUnit\JUnit.csproj", "{4A3B845D-1048-499E-AB28-F2860041694B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "..\DataStructures\DataStructures.csproj", "{EA465355-FBFF-43A7-A3EB-A0E1A6ADB7DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures", "..\DataStructures\DataStructures.csproj", "{EA465355-FBFF-43A7-A3EB-A0E1A6ADB7DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
