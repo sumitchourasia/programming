@@ -77,7 +77,6 @@ namespace DataStructures
                 Q.Rear = (Q.Rear + 1) % Q.Capacity;
                 Q.Array[Q.Rear] = Data;
             }
-
             if (Q.Front == -1)
             {
                 Q.Front = Q.Rear;
@@ -85,19 +84,29 @@ namespace DataStructures
         }
 
 
-        public static string Deque<T>(Queue<T> Q)
+        public static int Deque<T>(Queue<T> Q)
         {
             if (Utility.IsEmptyQueue<T>(Q))
             {
                 Console.WriteLine("queue underflow");
-                return null;
+                return -1;
             }
             else
             {
-                return (string)((Object)Q.Array[Q.Front++]);
+                int item = 0;
+                item = Convert.ToInt32(Q.Array[Q.Front++]);
+
+                if (Utility.QueueSize<T>(Q) == 1)
+                {
+                    Q.Front = Q.Rear = -1;
+                }
+                
+                return item;
             }
 
         }
+
+
 
 
 
@@ -165,6 +174,82 @@ namespace DataStructures
                 return S.Array[S.Top--].ToString();
             }
         }
+
+        /// <summary>
+        /// Creates the stack using linked list.
+        /// </summary>
+        /// <returns></returns>
+        public static ListNode<T> CreateStackUsingLinkedList<T>()
+        {
+            ListNode<T> head = null;
+            return head;
+        }
+
+        public static bool IsEmptyStackLL<T>(ListNode<T> head)
+        {
+            return head == null;
+        }
+
+        public static ListNode<T> PushSLL<T>(ListNode<T> head, T item)
+        {
+            ListNode<T> newnode = new ListNode<T>();
+            newnode.data = item;
+
+            if (head == null)
+            {
+                head = newnode;
+            }
+            else
+            {
+                newnode.next = head;
+                head = newnode;
+            }
+
+            return head;
+        }
+
+
+        public static int PopSLL<T>(ListNode<T> head)
+        {
+            ListNode<T> temp = null;
+            if (head == null)
+            {
+                return -1;
+            }
+            else
+            {
+                temp = head;
+                head = head.next;
+            }
+            return (int)((object)temp.data);
+        }
+
+        public static int SizeSLL<T>(ListNode<T> head)
+        {
+            int count = 0;
+            if (head == null)
+            {
+                return count;
+            }
+            else
+            {
+                ListNode<T> temp = head;
+
+                while (temp != null)
+                {
+                    count++;
+                    temp = temp.next;
+                }
+            }
+            return count;
+        }
+
+
+
+
+
+
+
 
         public static Boolean CanCovert(String value, Type type)
         {
@@ -264,10 +349,11 @@ namespace DataStructures
 
                 while (temp != null)
                 {
-                    SW.WriteLine((string)((object)temp.data), true);
+                    SW.WriteLine(((string)((object)temp.data)), true);
                     temp = temp.next;
                 }
             }
+
             SW.Close();
         }
 
@@ -411,7 +497,7 @@ namespace DataStructures
                 ListNode<T> temp = head;
                 while(temp!=null)
                 {
-                    Console.Write(" "+temp.data);
+                    Console.Write("  "+temp.data);
                     temp = temp.next;
                 }
             }
@@ -450,7 +536,6 @@ namespace DataStructures
 
             return false;
         }
-
 
 
 

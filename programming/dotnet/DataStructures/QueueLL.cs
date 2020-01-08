@@ -4,11 +4,9 @@ using System.Text;
 
 namespace DataStructures
 {
-    public class ListNode<T>
+   public class QueueLL<T>
     {
-        public T data;
-        public ListNode<T> next;
-
+        public ListNode<T> Front;
+        public ListNode<T> Rear;
     }
-    
 }

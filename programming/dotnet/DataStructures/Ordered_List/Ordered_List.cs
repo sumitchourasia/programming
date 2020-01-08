@@ -64,17 +64,5 @@ namespace DataStructures.Ordered_List
         }
 
 
-
-
-
-
-
-
-
-
-
-         
-
-
     }
 }

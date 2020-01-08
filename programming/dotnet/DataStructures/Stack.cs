@@ -9,7 +9,6 @@ namespace DataStructures
        public int Capacity;
        public int Top;
        public T[] Array;
-
     }
 
 }
