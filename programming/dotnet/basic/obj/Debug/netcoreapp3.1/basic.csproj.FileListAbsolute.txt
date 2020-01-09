@@ -12,17 +12,3 @@ C:\Users\Bridgelabz\Desktop\sumit\basic\obj\Debug\netcoreapp3.1\basic.pdb
 C:\Users\Bridgelabz\Desktop\sumit\basic\bin\Debug\netcoreapp3.1\Utility.dll
 C:\Users\Bridgelabz\Desktop\sumit\basic\bin\Debug\netcoreapp3.1\Utility.pdb
 C:\Users\Bridgelabz\Desktop\sumit\basic\obj\Debug\netcoreapp3.1\basic.csproj.CopyComplete
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\bin\Debug\netcoreapp3.1\basic.exe
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\bin\Debug\netcoreapp3.1\basic.deps.json
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\bin\Debug\netcoreapp3.1\basic.runtimeconfig.json
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\bin\Debug\netcoreapp3.1\basic.runtimeconfig.dev.json
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\bin\Debug\netcoreapp3.1\basic.dll
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\bin\Debug\netcoreapp3.1\basic.pdb
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\bin\Debug\netcoreapp3.1\Utility.dll
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\bin\Debug\netcoreapp3.1\Utility.pdb
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\obj\Debug\netcoreapp3.1\basic.csprojAssemblyReference.cache
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\obj\Debug\netcoreapp3.1\basic.AssemblyInfoInputs.cache
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\obj\Debug\netcoreapp3.1\basic.AssemblyInfo.cs
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\obj\Debug\netcoreapp3.1\basic.csproj.CopyComplete
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\obj\Debug\netcoreapp3.1\basic.dll
-C:\Users\Bridgelabz\Desktop\bridgelabz\programming\dotnet\basic\obj\Debug\netcoreapp3.1\basic.pdb

@@ -23,70 +23,54 @@ namespace JUnit
 			int year = Utility.Util.ReadInt();
 
 			//method call
-			CalculateDayOfWeek(date, month, year);
+			int daynumber = Utility.Util.CalculateDayOfWeek(date, month, year);
 
-		}
+            //DayOfWeek is selected on the basic of d0 value. sunday for 0 and so on.
+            switch (daynumber)
+            {
+                case 0:
+                    {
+                        Console.WriteLine("sunday");
+                        break;
+                    }
+                case 1:
+                    {
+                        Console.WriteLine("Monday");
+                        break;
+                    }
+                case 2:
+                    {
+                        Console.WriteLine("tuesday");
+                        break;
+                    }
+                case 3:
+                    {
+                        Console.WriteLine("wednesday");
+                        break;
+                    }
+                case 4:
+                    {
+                        Console.WriteLine("Thursday");
+                        break;
+                    }
+                case 5:
+                    {
+                        Console.WriteLine("friday");
+                        break;
+                    }
+                case 6:
+                    {
+                        Console.WriteLine("saturday");
+                        break;
+                    }
+                default:
+                    Console.WriteLine("error");
+                    break;
+            }
+
+        }
 
 
-		void CalculateDayOfWeek(int d, int m, int y)
-		{
-			int d0 = 0;
-			int m0 = 0;
-			int y0 = 0;
-			int x = 0;
-
-			//formulas to calculate the day.
-			y0 = y - (14 - m) / 12;
-
-			x = y0 + (y0 / 4) - (y0 / 100) + (y0 / 400);
-
-			m0 = m + 12 * ((14 - m) / 12) - 2;
-
-			d0 = (d + x + (31 * m0) / 12) % 7;
-
-			//DayOfWeek is selected on the basic of d0 value. sunday for 0 and so on.
-			switch (d0)
-			{
-				case 0:
-					{
-						Console.WriteLine("sunday");
-						break;
-					}
-				case 1:
-					{
-						Console.WriteLine("Monday");
-						break;
-					}
-				case 2:
-					{
-						Console.WriteLine("tuesday");
-						break;
-					}
-				case 3:
-					{
-						Console.WriteLine("wednesday");
-						break;
-					}
-				case 4:
-					{
-						Console.WriteLine("Thursday");
-						break;
-					}
-				case 5:
-					{
-						Console.WriteLine("friday");
-						break;
-					}
-				case 6:
-					{
-						Console.WriteLine("saturday");
-						break;
-					}
-				default:
-					Console.WriteLine("error");
-					break;
-			}
-		}
 
 	}
 }
