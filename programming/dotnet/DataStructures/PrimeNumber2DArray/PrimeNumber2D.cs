@@ -12,14 +12,14 @@ namespace DataStructures
                 array[i] = new int[100];
             }
 
-            int number = 1;
+            int number = 2;
             int m = 0;
-            
-            for(int i=0;i<10;i++)
+            int n = 0;
+            for (int i=0;i<10;i++)
             {
                 //take m and n to insert the prime number continuously.
                 //to increase the efficiency.
-                int n = 0;
+                n = 0;
                 for (int j=0;j<100;j++)
                 {
                     if(Utility.IsPrime(number))

@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace DataStructures
 {
@@ -8,7 +7,6 @@ namespace DataStructures
     {
         public T data;
         public ListNode<T> next;
-
     }
     
 }

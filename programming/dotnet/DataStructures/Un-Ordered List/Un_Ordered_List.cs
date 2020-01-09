@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
 
 namespace DataStructures.Un_Ordered_List
@@ -60,13 +58,7 @@ namespace DataStructures.Un_Ordered_List
             Utility.PrintLinkedList(Head);
 
             Utility.LinkedListToFile<T>(Head,path);
-
-            
             
         }
-
-       
-
-
     }
 }

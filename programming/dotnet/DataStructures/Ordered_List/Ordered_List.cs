@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 using System.IO;
 
 namespace DataStructures.Ordered_List
@@ -56,8 +55,8 @@ namespace DataStructures.Ordered_List
                 Console.WriteLine("popped data is : {0} ", data.data);
             }
 
-            Console.WriteLine(" list to store in file is : ");
-            Utility.PrintLinkedList(Head);
+          
+          //  Utility.PrintLinkedList(Head);
 
             Utility.LinkedListToFile<T>(Head,path);
 

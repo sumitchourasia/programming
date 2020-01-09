@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using System.ComponentModel;
 
@@ -37,6 +35,128 @@ namespace DataStructures
             }
         }
 
+
+
+        /// <summary>
+        /// Creates the hash table using linked list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static ListNode<T>[] CreateHashTableUsingLinkedList<T>()
+        {
+            ListNode<T>[] HashTable = new ListNode<T>[11];
+
+            return HashTable;
+        }
+
+        /// <summary>
+        /// Insert into hash table.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="HashTable">The hash table.</param>
+        /// <param name="item">The item.</param>
+        public static void InsertIntoHashTable<T>(ListNode<T>[] HashTable, T item)
+        {
+            int index = 0;
+            ListNode<T> newnode = new ListNode<T>();
+            newnode.data = (T)((object)item);
+
+            index = HashingFunction(HashTable, item);
+
+            HashTable[index] = Utility.AddInOrder(HashTable[index], newnode);
+
+            Console.WriteLine(" ");
+
+        }
+
+
+        /// <summary>
+        /// Deletes from hash table.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="HashTable">The hash table.</param>
+        /// <param name="item">The item.</param>
+        public static void DeleteFromHashTable<T>(ListNode<T>[] HashTable, T item)
+        {
+            int index = 0;
+            int innerindex = 0;
+            index = HashingFunction(HashTable, item);
+
+            innerindex = Utility.Index(HashTable[index], (ListNode<T>)((object)item));
+
+            ListNode<T> data = Utility.Pop(ref HashTable[index], innerindex);
+
+        }
+
+
+        /// <summary>
+        /// Search the item into hash table.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="hashtable">The hashtable.</param>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
+        public static bool SearchIntoHashTable<T>(ListNode<T>[] hashtable, T item)
+        {
+            int index = HashingFunction(hashtable, item);
+
+            return Utility.SearchItem(hashtable[index], (string)((object)item));
+        }
+
+
+        /// <summary>
+        /// Hashing function using modulus.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="HashTable">The hash table.</param>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
+        public static int HashingFunction<T>(ListNode<T>[] HashTable, T item)
+        {
+            int data = Convert.ToInt32(item);
+
+            return (data % HashTable.Length);
+        }
+
+        /// <summary>
+        /// Write the HashTable to a file
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="HashTable">The hash table.</param>
+        /// <param name="path">The path.</param>
+        public static void HashTableToFile<T>(ListNode<T>[] HashTable, string path)
+        {
+            StreamWriter SW = new StreamWriter(path);
+
+            for (int i = 0; i < HashTable.Length; i++)
+            {
+
+                if (HashTable[i] != null || !File.Exists(path))
+                {
+                    ListNode<T> temp = HashTable[i];
+
+                    while (temp != null)
+                    {
+                        string data = (string)((object)temp.data);
+                        Console.WriteLine("data to be written : {0}", data);
+                        SW.Write(data, true);
+                        SW.Write("   ", true);
+                        temp = temp.next;
+                    }
+                    SW.WriteLine(" ", true);
+                }
+
+            }
+            SW.Close();
+        }
+
+
+
+        /// <summary>
+        /// Creates the queue using circular array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static Queue<T> CreateQueue<T>()
         {
             Queue<T> Q = new Queue<T>();
@@ -48,23 +168,49 @@ namespace DataStructures
             return Q;
         }
 
-
+        /// <summary>
+        /// Determines whether the Queue using circular array is empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Q">The q.</param>
+        /// <returns>
+        ///   <c>true</c> if [is empty queue] [the specified q]; otherwise, <c>false</c>.
+        /// </returns>
         public static bool IsEmptyQueue<T>(Queue<T> Q)
         {
             return Q.Front == -1 && Q.Rear == -1;
         }
 
+        /// <summary>
+        /// Determines whether the Queue using circular array is full.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Q">The q.</param>
+        /// <returns>
+        ///   <c>true</c> if [is full queue] [the specified q]; otherwise, <c>false</c>.
+        /// </returns>
         public static bool IsFullQueue<T>(Queue<T> Q)
         {
             return ((Q.Rear + 1) % Q.Capacity == Q.Front);
         }
 
+        /// <summary>
+        /// find the size of the Queue using circular Array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Q">The q.</param>
+        /// <returns></returns>
         public static int QueueSize<T>(Queue<T> Q)
         {
             return (Q.Capacity - Q.Front + Q.Rear + 1) % Q.Capacity;
         }
 
-
+        /// <summary>
+        /// insert the data into the Queue using circular array.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Q">The q.</param>
+        /// <param name="Data">The data.</param>
         public static void Enque<T>(Queue<T> Q, T Data)
         {
             if (Utility.IsFullQueue<T>(Q))
@@ -84,6 +230,12 @@ namespace DataStructures
         }
 
 
+        /// <summary>
+        /// delete the data from the rear of the queue using circular array.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Q">The q.</param>
+        /// <returns></returns>
         public static int Deque<T>(Queue<T> Q)
         {
             if (Utility.IsEmptyQueue<T>(Q))
@@ -111,8 +263,21 @@ namespace DataStructures
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         /// <summary>
-        /// Creates the array stack.
+        /// Creates the stack using array.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
@@ -126,16 +291,38 @@ namespace DataStructures
             return stack;
         }
 
+        /// <summary>
+        /// Determines whether the stack using array is empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="S">The s.</param>
+        /// <returns>
+        ///   <c>true</c> if [is empty stack] [the specified s]; otherwise, <c>false</c>.
+        /// </returns>
         public static bool IsEmptyStack<T>(Stack<T> S)
         {
             return S.Top == -1;
         }
 
+        /// <summary>
+        /// Determines whether stack using circular array is full.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="S">The s.</param>
+        /// <returns>
+        ///   <c>true</c> if [is full stack] [the specified s]; otherwise, <c>false</c>.
+        /// </returns>
         public static bool IsFullStack<T>(Stack<T> S)
         {
             return S.Capacity - 1 == S.Top;
         }
 
+        /// <summary>
+        /// returns the top element of the stack using circular array.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="S">The s.</param>
+        /// <returns></returns>
         public static string Peek<T>(Stack<T> S)
         {
             if (IsEmptyStack(S))
@@ -148,6 +335,12 @@ namespace DataStructures
             }
         }
 
+        /// <summary>
+        /// Pushe the data into the stack using circular array.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="S">The s.</param>
+        /// <param name="data">The data.</param>
         public static void Push<T>(Stack<T> S, T data)
         {
             if (IsFullStack(S))
@@ -162,6 +355,12 @@ namespace DataStructures
         }
 
 
+        /// <summary>
+        /// Pops the top data from the stack using circular array.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="S">The s.</param>
+        /// <returns></returns>
         public static string Pop<T>(Stack<T> S)
         {
             if (IsEmptyStack(S))
@@ -175,6 +374,23 @@ namespace DataStructures
             }
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /// <summary>
         /// Creates the stack using linked list.
         /// </summary>
@@ -185,11 +401,26 @@ namespace DataStructures
             return head;
         }
 
+        /// <summary>
+        /// Determines whether the stack using the linked list is empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="head">The head.</param>
+        /// <returns>
+        ///   <c>true</c> if [is empty stack ll] [the specified head]; otherwise, <c>false</c>.
+        /// </returns>
         public static bool IsEmptyStackLL<T>(ListNode<T> head)
         {
             return head == null;
         }
 
+        /// <summary>
+        /// Push the item into the stack using linked list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="head">The head.</param>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
         public static ListNode<T> PushSLL<T>(ListNode<T> head, T item)
         {
             ListNode<T> newnode = new ListNode<T>();
@@ -208,7 +439,12 @@ namespace DataStructures
             return head;
         }
 
-
+        /// <summary>
+        /// Pop the item fromt eh rear of the stack using linked list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="head">The head.</param>
+        /// <returns></returns>
         public static int PopSLL<T>(ListNode<T> head)
         {
             ListNode<T> temp = null;
@@ -224,6 +460,13 @@ namespace DataStructures
             return (int)((object)temp.data);
         }
 
+
+        /// <summary>
+        /// find the size of the stack using linked list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="head">The head.</param>
+        /// <returns></returns>
         public static int SizeSLL<T>(ListNode<T> head)
         {
             int count = 0;
@@ -243,6 +486,11 @@ namespace DataStructures
             }
             return count;
         }
+
+
+
+
+
 
 
 
@@ -272,15 +520,29 @@ namespace DataStructures
 
 
 
+        /// <summary>
+        /// Reads the file into array.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="path">The path.</param>
+        /// <param name="array">The array.</param>
         public static void ReadFileIntoArray<T>(string path, T[] array)
         {
+            int count = 0;
             StreamReader SR = new StreamReader(path);
 
-            for (int i = 0; i < array.Length; i++)
+            string str = File.ReadAllText(path);
+
+            string[] arr = str.Split();
+            Console.WriteLine(" arr length : ",arr.Length);
+            for (int i = 0; i < arr.Length; i++)
             {
-                string data = SR.ReadLine();
-                if (data != null)
-                    array[i] = (T)(object)data;
+                if (arr[i] != null)
+                {
+                    Console.WriteLine(arr[i]);
+                    array[i] = (T)((object)arr[i]);
+                    Console.WriteLine(count++);
+                }
                 else
                     break;
             }
@@ -349,7 +611,8 @@ namespace DataStructures
 
                 while (temp != null)
                 {
-                    SW.WriteLine(((string)((object)temp.data)), true);
+                    SW.Write(((string)((object)temp.data)), true);
+                    SW.Write(" ",true);
                     temp = temp.next;
                 }
             }
@@ -432,11 +695,6 @@ namespace DataStructures
             }
             return head;
 
-         * 
-         * 
-         * 
-         * 
-         * 
          * */
 
 
@@ -456,34 +714,40 @@ namespace DataStructures
                 head = newnode;
             }
             else
-            {
-                ListNode<T> temp = head;
-                if(Convert.ToInt32(head.data)>Convert.ToInt32(newnode.data))
                 {
-                    newnode.next = head;
-                    head = newnode;
-                }
-                else
-                {
-                    temp = head;
-                    while(temp.next != null)
+                    Console.Write("inside else {0}", (int.Parse((string)((object)head.data) )));
+                    ListNode<T> temp = head;
+                    if ( Convert.ToInt32(head.data) > Convert.ToInt32(newnode.data) )
                     {
-                        if(Convert.ToInt32(temp.next.data) > Convert.ToInt32(newnode.data))
-                        {
-                            newnode.next = temp.next;
-                            temp.next = newnode;
-                            break;
-                        }
-                        temp = temp.next;
+                        newnode.next = head;
+                        head = newnode;
                     }
-                    temp.next = newnode;
-                }
+                    else
+                    {
+                        temp = head;
+                        while (temp.next != null)
+                        {
+                            if (Convert.ToInt32(temp.next.data) > Convert.ToInt32(newnode.data))
+                            {
+                                newnode.next = temp.next;
+                                temp.next = newnode;
+                                break;
+                            }
+                            temp = temp.next;
+                        }
+                        temp.next = newnode;
+                    }
+               
 
             }
             return head;
         }
 
-
+        /// <summary>
+        /// Prints the linked list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="head">The head.</param>
         public static void PrintLinkedList<T>(ListNode<T> head)
         {
             Console.WriteLine(" print linked list :");
@@ -506,7 +770,7 @@ namespace DataStructures
 
 
         /// <summary>
-        /// to search the item into the linkedlist and return true or false.
+        /// search the item into the linkedlist and return true or false.
         /// </summary>
         /// <param name="head"></param>
         /// <param name="item"></param>
@@ -540,7 +804,7 @@ namespace DataStructures
 
 
         /// <summary>
-        /// if the item is found then the return the index otherwise return -1;
+        /// if the item is found then return the index otherwise return -1;
         /// </summary>
         /// <param name="head"></param>
         /// <param name="item"></param>
@@ -602,7 +866,13 @@ namespace DataStructures
 
 
 
-
+        /// <summary>
+        /// Pop the item form the index out of the stack using linked list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="head">The head.</param>
+        /// <param name="index">The index.</param>
+        /// <returns></returns>
         public static ListNode<T> Pop<T>(ref ListNode<T> head, int index)
         {
             ListNode<T> temp;
@@ -644,9 +914,148 @@ namespace DataStructures
 
 
 
+        /// <summary>
+        /// Creates the Queue using linked list
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static QueueLL<T> CreateQueueLL<T>()
+        {
+            QueueLL<T> queue = new QueueLL<T>();
+            return queue;
+        }
+
+        /// <summary>
+        /// Determines whether the Queue Using Linked list is empty
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Q">The q.</param>
+        /// <returns>
+        ///   <c>true</c> if [is empty QLL] [the specified q]; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsEmptyQLL<T>(QueueLL<T> Q)
+        {
+            return Q.Front == null;
+        }
+
+        /// <summary>
+        /// Enques the queue using linked list
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Q">The q.</param>
+        /// <param name="item">The item.</param>
+        public static void EnqueQLL<T>(QueueLL<T> Q, T item)
+        {
+            ListNode<T> newnode = new ListNode<T>();
+            newnode.data = item;
+
+            if (Q.Rear == null)
+            {
+                Q.Rear = newnode;
+            }
+            else
+            {
+                Q.Rear.next = newnode;
+                Q.Rear = newnode;
+            }
+
+            if (Q.Front == null)
+            {
+                Q.Front = Q.Rear;
+            }
+        }
+
+        /// <summary>
+        /// remove element from Queue using linked list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Q">The q.</param>
+        /// <returns></returns>
+        public static int DequeLL<T>(QueueLL<T> Q)
+        {
+            ListNode<T> temp;
+
+            if (Q.Front == null)
+            {
+                return -1;
+            }
+            else
+            {
+                temp = Q.Front;
+                Q.Front = Q.Front.next;
+            }
+
+            return ((int)((object)temp.data));
+        }
 
 
 
+        /// <summary>
+        /// Prints the Queue using linked list.
+        /// </summary>
+        /// <param name="QLL">The QLL.</param>
+        public static void PrintQLL<T>(QueueLL<T> QLL)
+        {
+
+            Utility.PrintLinkedList(QLL.Front);
+
+        }
+
+
+
+
+        /// <summary>
+        /// find the size of the Queue using lisned list
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Q">The q.</param>
+        /// <returns></returns>
+        public static int SizeQLL<T>(QueueLL<T> Q)
+        {
+            ListNode<T> temp;
+            int count = 0;
+            if (Q.Front == null)
+            {
+                return count;
+            }
+            else
+            {
+                temp = Q.Front;
+                while (temp != null)
+                {
+                    count++;
+                    temp = temp.next;
+                }
+            }
+            return count;
+        }
+
+
+        /// <summary>
+        /// Calculates the day of week.
+        /// </summary>
+        /// <param name="d">The d.</param>
+        /// <param name="m">The m.</param>
+        /// <param name="y">The y.</param>
+        /// <returns></returns>
+        public static int CalculateDayOfWeek(int d, int m, int y)
+        {
+            int d0 = 0;
+            int m0 = 0;
+            int y0 = 0;
+            int x = 0;
+
+            //formulas to calculate the day.
+            y0 = y - (14 - m) / 12;
+
+            x = y0 + (y0 / 4) - (y0 / 100) + (y0 / 400);
+
+            m0 = m + 12 * ((14 - m) / 12) - 2;
+
+            d0 = (d + x + (31 * m0) / 12) % 7;
+
+            return d0;
+        }
 
 
 

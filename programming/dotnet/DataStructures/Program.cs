@@ -9,13 +9,16 @@ namespace DataStructures
             Console.WriteLine("enter your choice : ");
             Console.WriteLine(" 1 -> Un_Ordered_List Program ");
             Console.WriteLine(" 2 -> Ordered_List Program ");
+            Console.WriteLine(" 3 -> Balanced paranthesis ");
+            Console.WriteLine(" 4 -> Banking Cash Counter program");
+
+            Console.WriteLine(" 6 -> Hashing Using linkedlist Program");
+
             Console.WriteLine(" 8 -> PrimeNumbersIn2D program ");
             Console.WriteLine(" 9 -> primeNumberAnagram2D program ");
-            Console.WriteLine(" 4 -> Banking Cash Counter program");
-            Console.WriteLine(" 6 -> Hashing Using linkedlist Program");
             Console.WriteLine("10 -> PrimeAnagram into stack using Linkedlist program ");
-            Console.WriteLine(" 3 -> ");
-
+            Console.WriteLine("11 -> PrimeAnagram_Queue_LinkedLIst ");
+           
             int k = Utility.ReadInt();
 
             switch(k)
@@ -60,6 +63,11 @@ namespace DataStructures
                     AnagramInStack.PrimeAnagram_StackUsingLinkedList_Method();
                     break;
 
+                case 11:
+                    PrimeAnagram_Queue_LinkedLIst<string> AnagramQLL = new PrimeAnagram_Queue_LinkedLIst<string>();
+                    AnagramQLL.PrimeAnagram_Queue_linkedList_Method();
+                    break;
+
                 case 13:
                     StreamWriterAndReader swr = new StreamWriterAndReader();
                     swr.streamReadWriteMethod();
@@ -72,3 +80,4 @@ namespace DataStructures
         }
     }
 }
+
