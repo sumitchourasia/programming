@@ -8,15 +8,14 @@ namespace DataStructures.Calender
         {
             string[,] CalenderArray = new string[6,7];
 
-
-
+            ////initialise the CalenderArray
             for (int i=0;i<6;i++)
             {
                 if (i == 0)
                 {
                     for (int k = 0; k < 7; k++)
                     {
-                        CalenderArray[0, k] = DayNumber(k);
+                        CalenderArray[0, k] = NumberToDay(k);
                     }
                     Console.WriteLine();
                 }
@@ -31,19 +30,7 @@ namespace DataStructures.Calender
             }
 
 
-
-            for (int i = 0; i < 6; i++)
-            {
-                for (int j = 0; j < 7; j++)
-                {
-                    if (CalenderArray[i, j] != " 0 ")
-                        Console.Write(" {0} ", CalenderArray[i, j]);
-                }
-                Console.WriteLine(" ");
-            }
-
-
-
+            ////input month and year to print the month calender.
 
             Console.WriteLine("enter the month and year");
             int month = Utility.ReadInt();
@@ -51,6 +38,7 @@ namespace DataStructures.Calender
             int date = 1;
             int maxDate = 30;
 
+            ////determine the month is of 31 or 30 or 28 or 29 days.
             if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
             {
                 maxDate = 31;
@@ -72,7 +60,7 @@ namespace DataStructures.Calender
 
             }
 
-
+            ////arrange the date in the array.
             for (int i = 1; i < 6; i++)
             {
                 for (int j = 0; j < 7 && date <= maxDate; j++)
@@ -85,39 +73,35 @@ namespace DataStructures.Calender
                 }
             }
 
-                
-          
-          
+
+            printCalender(CalenderArray);
+
+
+
+
+
+
+        }
+
+        /// <summary>
+        /// Prints the calender.
+        /// </summary>
+        /// <param name="CalenderArray">The calender array.</param>
+        public void printCalender(string[,] CalenderArray)
+        {
 
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    if (i == 1 )
+                    if (CalenderArray[i, j] != " 0 ")
                         Console.Write(" {0} ", CalenderArray[i, j]);
-                    else
-                    {
-                        if ( CalenderArray[i, j] != " 0 ")
-                            Console.Write(" {0} ", CalenderArray[i, j]);
-                    }
                 }
-                Console.WriteLine();
+                Console.WriteLine(" ");
             }
-
-
-
-            /*
-
-          for(int i=0;i<7;i++)
-          {
-              CalenderArray[i] = new string[7];
-          }
-          */
-
-
         }
 
-        public string DayNumber(int daynumber)
+        public string NumberToDay(int daynumber)
         {
 
             //DayOfWeek is selected on the basic of d0 value. sunday for 0 and so on.
