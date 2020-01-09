@@ -12,8 +12,10 @@ namespace JUnit
 		/// </summary>
 		public void DayOFWeekMethod()
 		{
-			//input the date month and year.
-			Console.Write("enter the date : ");
+            int maxDate = 31;
+            int daynumber = 0;
+            //input the date month and year.
+            Console.Write("enter the date : ");
 			int date = Utility.Util.ReadInt();
 
 			Console.Write("enter the month : ");
@@ -22,9 +24,37 @@ namespace JUnit
 			Console.Write("enter the year : ");
 			int year = Utility.Util.ReadInt();
 
-			//method call
-			int daynumber = Utility.Util.CalculateDayOfWeek(date, month, year);
+            ////determine the month is of 31 or 30 or 28 or 29 days.
+            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+            {
+                maxDate = 31;
+            }
+            else if (month == 2)
+            {
+                if (Utility.Util.CheckLeapYear(year))
+                {
 
+                    maxDate = 29;
+                }
+                else
+                    maxDate = 28;
+            }
+            else
+            {
+                maxDate = 30;
+
+            }
+
+
+            if (date <= maxDate)
+            {
+                daynumber = Utility.Util.CalculateDayOfWeek(date, month, year);
+            }
+            else
+            {
+                Console.WriteLine("date is incorrect ");
+                return ;
+            }
             //DayOfWeek is selected on the basic of d0 value. sunday for 0 and so on.
             switch (daynumber)
             {
@@ -69,8 +99,6 @@ namespace JUnit
             }
 
         }
-
-
 
 	}
 }
