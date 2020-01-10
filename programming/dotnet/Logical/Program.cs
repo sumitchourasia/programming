@@ -29,7 +29,8 @@ namespace Logical
                     break;
 
                 case 3:
-                    
+                    StopWatchProgram stopwatchobj = new StopWatchProgram();
+                    stopwatchobj.StopWatchMethod();
                     break;
 
                 case 4:

@@ -358,6 +358,24 @@ namespace Utility
         }
 
 
+        /// <summary>
+        /// To check the elapse of time
+        /// </summary>
+        /// <param name="start">It takes start as a parameter</param>
+        /// <param name="end">It takes end as a parameter</param>
+        public static void Stopwatch(int start, int end)
+        {
+                long elapse = end - start;
+                Console.WriteLine("Elapse time = {0}", elapse);
+        }
+
+
+
+
+
+
+
+
 
         /// <summary>
         /// Calculates the day of week.
