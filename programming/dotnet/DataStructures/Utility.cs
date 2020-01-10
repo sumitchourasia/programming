@@ -1058,7 +1058,18 @@ namespace DataStructures
         }
 
 
+        /// <summary>
+        /// CheckLeapYear method is used to check if a given method is leap year 
+        /// and returns a boolean true or false
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public static bool CheckLeapYear(int year)
+        {
 
+            return ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0));
+
+        }
 
 
 

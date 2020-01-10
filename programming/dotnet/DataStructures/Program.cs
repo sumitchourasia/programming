@@ -18,7 +18,9 @@ namespace DataStructures
             Console.WriteLine(" 9 -> primeNumberAnagram2D program ");
             Console.WriteLine("10 -> PrimeAnagram into stack using Linkedlist program ");
             Console.WriteLine("11 -> PrimeAnagram_Queue_LinkedLIst ");
-           
+            Console.WriteLine("12 -> Calender2D program ");
+
+
             int k = Utility.ReadInt();
 
             switch(k)
@@ -66,6 +68,11 @@ namespace DataStructures
                 case 11:
                     PrimeAnagram_Queue_LinkedLIst<string> AnagramQLL = new PrimeAnagram_Queue_LinkedLIst<string>();
                     AnagramQLL.PrimeAnagram_Queue_linkedList_Method();
+                    break;
+
+                case 12:
+                    DataStructures.Calender.Calender2D calender = new DataStructures.Calender.Calender2D();
+                    calender.Calender2DMethod();
                     break;
 
                 case 13:

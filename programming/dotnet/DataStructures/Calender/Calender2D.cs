@@ -6,7 +6,10 @@ namespace DataStructures.Calender
     {
         public void Calender2DMethod()
         {
+
             string[,] CalenderArray = new string[6,7];
+
+
 
             ////initialise the CalenderArray
             for (int i=0;i<6;i++)
@@ -30,13 +33,17 @@ namespace DataStructures.Calender
             }
 
 
-            ////input month and year to print the month calender.
 
+
+            ////input month and year to print the month calender.
             Console.WriteLine("enter the month and year");
             int month = Utility.ReadInt();
             int year = Utility.ReadInt();
             int date = 1;
             int maxDate = 30;
+
+
+
 
             ////determine the month is of 31 or 30 or 28 or 29 days.
             if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
@@ -47,9 +54,7 @@ namespace DataStructures.Calender
             {
                 if (Utility.CheckLeapYear(year))
                 {
-                    
                     maxDate = 29;
-                    Console.WriteLine("month " + month);
                 }
                 else
                     maxDate = 28;
@@ -57,8 +62,10 @@ namespace DataStructures.Calender
             else
             {
                 maxDate = 30;
-
             }
+
+
+
 
             ////arrange the date in the array.
             for (int i = 1; i < 6; i++)
@@ -74,12 +81,8 @@ namespace DataStructures.Calender
             }
 
 
+            ////print the calender
             printCalender(CalenderArray);
-
-
-
-
-
 
         }
 
@@ -89,7 +92,6 @@ namespace DataStructures.Calender
         /// <param name="CalenderArray">The calender array.</param>
         public void printCalender(string[,] CalenderArray)
         {
-
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 7; j++)
@@ -139,9 +141,9 @@ namespace DataStructures.Calender
                     
                     return " o ";
             }
-
-            
         }
+
+
 
     }
 }

@@ -9,7 +9,7 @@ namespace DataStructures
         public int Front;
         public int Rear;
         public T[] Array;
-
     }
+
 }
 
