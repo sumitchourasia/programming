@@ -1,0 +1,13 @@
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\bin\Debug\netcoreapp3.1\OOPs.exe
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\obj\Debug\netcoreapp3.1\OOPs.csprojAssemblyReference.cache
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\obj\Debug\netcoreapp3.1\OOPs.AssemblyInfoInputs.cache
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\obj\Debug\netcoreapp3.1\OOPs.AssemblyInfo.cs
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\bin\Debug\netcoreapp3.1\OOPs.deps.json
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\bin\Debug\netcoreapp3.1\OOPs.runtimeconfig.json
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\bin\Debug\netcoreapp3.1\OOPs.runtimeconfig.dev.json
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\bin\Debug\netcoreapp3.1\OOPs.dll
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\bin\Debug\netcoreapp3.1\OOPs.pdb
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\obj\Debug\netcoreapp3.1\OOPs.csproj.CopyComplete
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\obj\Debug\netcoreapp3.1\OOPs.dll
+C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\obj\Debug\netcoreapp3.1\OOPs.pdb

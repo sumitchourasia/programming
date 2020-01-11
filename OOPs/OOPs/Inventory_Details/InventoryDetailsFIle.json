@@ -1,0 +1,39 @@
+{
+  "Rice": [
+    {
+      "name": "Basmati",
+      "weight": 5.0,
+      "princePerKg": 80.0
+    },
+    {
+      "name": "Sona Mansuri",
+      "weight": 5.0,
+      "pricePerKg": 45.0
+    }
+  ],
+  "Wheat": [
+    {
+      "name": "Common Wheat",
+      "weight": 6.5,
+      "pricePerKg": 28.0
+    },
+    {
+      "name": "Spelt",
+      "weight": 3.0,
+      "pricePerKg": 30.0
+    }
+  ],
+  "Pulse": [
+    {
+      "name": "Rajma",
+      "weight": 2.0,
+      "pricePerKg": 55.0
+    },
+    {
+      "name": "Moong",
+      "weight": 2.5,
+      "pricePerKg": 60.0
+    }
+
+  ]
+}
