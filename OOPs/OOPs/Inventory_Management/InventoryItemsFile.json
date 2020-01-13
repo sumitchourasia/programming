@@ -1,0 +1,38 @@
+{
+  "Rice": [
+    {
+      "name": "Basmati rice",
+      "weight": 5.0,
+      "pricePerKg": 85.0
+    },
+    {
+      "name": "Mansuri rice",
+      "weight": 5.0,
+      "pricePerKg": 45.0
+    }
+  ],
+  "Wheat": [
+    {
+      "name": "Common Wheat",
+      "weight": 6.5,
+      "pricePerKg": 28.0
+    },
+    {
+      "name": "Spelt wheat",
+      "weight": 3.0,
+      "pricePerKg": 30.0
+    }
+  ],
+  "Pulses": [
+    {
+      "name": "Rajma pulses",
+      "weight": 2.0,
+      "pricePerKg": 55.0
+    },
+    {
+      "name": "Moong pulses",
+      "weight": 2.5,
+      "pricePerKg": 60.0
+    }
+  ]
+}
