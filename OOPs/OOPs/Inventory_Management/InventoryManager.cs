@@ -12,20 +12,15 @@ namespace OOPs.Inventory_Management
         public void InventoryManagerMethod(InventoryItems inventoryItemsObject)
         {
             int choice = 0;
-            string proceed = " ";
             do
             {
                 Console.WriteLine("enter your choice");
-                Console.WriteLine("1.  adding  rice");
-                Console.WriteLine("2.  adding wheat");
-                Console.WriteLine("3.  adding pulses");
-                Console.WriteLine("4.  deleting rice");
-                Console.WriteLine("5.  deleting wheat");
-                Console.WriteLine("6.  deleting pulses");
-                Console.WriteLine("7.  Updating rice");
-                Console.WriteLine("8.  Updating wheat");
-                Console.WriteLine("9.  Updating pulses");
-                Console.WriteLine("10. viewing details");
+                Console.WriteLine("1.  Adding  rice");
+                Console.WriteLine("2.  Adding wheat");
+                Console.WriteLine("3.  Adding pulses");
+                Console.WriteLine("4.  Remove Rice item ");
+                Console.WriteLine("5.  Remove an item ");
+                Console.WriteLine("6.  Update an item");
                 Console.WriteLine(" -1. exit");
 
                 choice = Utility.ReadInt();
@@ -34,56 +29,37 @@ namespace OOPs.Inventory_Management
                 {
                     case 1:
                         Utility.AddRice(inventoryItemsObject);
-                        Utility.PrintInventoryItem(inventoryItemsObject);
                         break;
 
                     case 2:
-                            Utility.AddWheat(inventoryItemsObject);
+                        Utility.AddWheat(inventoryItemsObject);
                         break;
 
                     case 3:
-                            Utility.AddPulses(inventoryItemsObject);
+                        Utility.AddPulses(inventoryItemsObject);
                         break;
 
                     case 4:
-                            Utility.RemoveRice(inventoryItemsObject);
-                            Utility.PrintInventoryItem(inventoryItemsObject);
-                            break;
-                /*
+                        Utility.RemoveRice(inventoryItemsObject);
+                        break;
+                    
                     case 5:
-                            Utility.RemoveWheat();
+                        Utility.Remove(inventoryItemsObject);
                         break;
 
                     case 6:
-                            Utility.DeletePulse();
+                        Utility.Update(inventoryItemsObject);
                         break;
-                */
-                    case 7:
-                            Utility.UpdateRice();
-                        break;
-
-                    case 8:
-                            Utility.UpdateWheat();
-                        break;
-
-                    case 9:
-                        Utility.UpdatePulses();
-                        break;
-
-                    case 10:
-                        Utility.ViewDetails();
-                        break;
-                    
+                        
                     case -1:
                         return;
 
                     default:
-                        Console.WriteLine("Enter the proper number");
+                        Console.WriteLine("Enter the proper choice");
                         break;
                 }
-                Console.Write("do you eant to continue  yes/no:");
-                proceed = Utility.ReadString();
-                }while (proceed != "no");                   
+                Utility.PrintInventoryItem(inventoryItemsObject);
+                }while (choice != -1);                   
         }
     }
 }
