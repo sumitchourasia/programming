@@ -10,7 +10,7 @@ namespace OOPs.Inventory_Management
         {
             try
             {
-                string path = @"C:/Users/Bridgelabz/Documents/GitHub/programming/OOP's/OOPs/OOPs/Inventory_Details/InventoryDetailsFIle.json";
+                string path = @"C:\Users\Bridgelabz\Documents\GitHub\programming\OOP's\OOPs\OOPs\Inventory_Management\InventoryItemsFile.json";
 
                 string StringOfJson = Utility.ReadFile(path);
 
@@ -19,6 +19,9 @@ namespace OOPs.Inventory_Management
                 InventoryItems fileList = Utility.DeserializeTheObject(StringOfJson);
 
                 Utility.PrintInventoryItem(fileList);
+
+                InventoryManager inventoryManager = new InventoryManager();
+                inventoryManager.InventoryManagerMethod(fileList);
 
             }
             catch (Exception e)
