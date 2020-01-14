@@ -14,7 +14,7 @@ namespace OOPs.Inventory_Management
 
                 string StringOfJson = Utility.ReadFile(path);
 
-                Console.WriteLine(StringOfJson + "string of json");
+             //   Console.WriteLine(StringOfJson + "string of json");
 
                 InventoryItems fileList = Utility.DeserializeTheObject(StringOfJson);
 
