@@ -264,7 +264,7 @@ namespace OOPs.DeckOfCardsExtendedToQueue
         public static void PrintQueuePlayer(QueuePlayer queuePlayer)
         {
             int count = 0;
-            Console.WriteLine("inside printQueuePlayer method");
+            ////Console.WriteLine("inside printQueuePlayer method");
             ListNodeCard tempPlayerCard = null;
             ListNodePlayer tempPlayer = queuePlayer.Front;
             while(tempPlayer != null)
@@ -273,7 +273,29 @@ namespace OOPs.DeckOfCardsExtendedToQueue
                 tempPlayerCard = tempPlayer.Data.queueCard.Front;
                 while(tempPlayerCard != null)
                 {
-                    Console.Write(tempPlayerCard.Suit + "-" + tempPlayerCard.Rank + "  ");
+                    if (tempPlayerCard.Rank > 10)
+                    {
+                        if(tempPlayerCard.Rank == 11)
+                        {
+                            Console.Write(tempPlayerCard.Suit +"-"+"Jack  ");
+                        }
+                        else if(tempPlayerCard.Rank == 12)
+                        {
+                            Console.Write(tempPlayerCard.Suit + "-" + "Queen  ");
+                        }
+                        else if(tempPlayerCard.Rank == 13)
+                        {
+                            Console.Write(tempPlayerCard.Suit + "-" + "King  ");
+                        }
+                        else if(tempPlayerCard.Rank == 14)
+                        {
+                            Console.Write(tempPlayerCard.Suit + "-" + "Ace  ");
+                        }
+                    }
+                    else
+                    {
+                        Console.Write(tempPlayerCard.Suit + "-" + tempPlayerCard.Rank + "  ");
+                    }
                     tempPlayerCard = tempPlayerCard.next;
                 }
                 Console.WriteLine();
@@ -281,39 +303,48 @@ namespace OOPs.DeckOfCardsExtendedToQueue
             }
         }
 
+        /// <summary>
+        /// sort the card of all the player
+        /// </summary>
+        /// <param name="queuePlayer"></param>
+        public static void Sort(QueuePlayer queuePlayer)
+        {
+            ListNodePlayer temp = queuePlayer.Front;
+            while(temp != null)
+            {
+                SortCardQueue(temp.Data.queueCard);
+                temp = temp.next;
+            }
+        }
+
+        /// <summary>
+        /// sort all the card of each of the player
+        /// </summary>
+        /// <param name="queueCard"></param>
         public static void SortCardQueue(QueueCard queueCard)
         {
-            ListNodeCard prevtemp = null;
-            ListNodeCard nexttemp = null;
-            ListNodeCard intermediate = null;
-            ListNodeCard outertemp = queueCard.Front;
-            ListNodeCard innertemp = queueCard.Front;
-            if (queueCard.Front == null || queueCard.Front.next == null)
-                return;
-           
-            while ( outertemp != null )
+            ListNodeCard current = queueCard.Front;
+            ListNodeCard second = null;
+            string tempSuit = null;
+            int tempRank = 0;
+
+            while(current != null)
             {
-                innertemp = queueCard.Front;
-               
-                if (queueCard.Front.Rank > queueCard.Front.next.Rank)
+                second = current.next;
+                while(second != null)
                 {
-                    intermediate = queueCard.Front.next;
-                    queueCard.Front.next = intermediate.next;
-                    intermediate.next = queueCard.Front;
-                    queueCard.Front = intermediate;
-                }
-                else
-                {
-                    innertemp = queueCard.Front;
-                    while (innertemp.next != null)
+                    if(current.Rank > second.Rank)
                     {
-                        {
-
-
-                        }
-
+                        tempSuit = current.Suit;
+                        tempRank = current.Rank;
+                        current.Suit = second.Suit;
+                        current.Rank = second.Rank;
+                        second.Suit = tempSuit;
+                        second.Rank = tempRank;
                     }
+                    second = second.next;
                 }
+                current = current.next;
             }
         }
 
