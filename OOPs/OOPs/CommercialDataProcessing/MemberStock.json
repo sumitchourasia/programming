@@ -1,0 +1,29 @@
+{
+  "memberStockList": [
+    {
+      "shareName": "MICROSOFT",
+      "numberOfShare": 200,
+      "sharePrice": 2100.0
+    },
+    {
+      "shareName": "SAMSUNG",
+      "numberOfShare": 200,
+      "sharePrice": 2000.0
+    },
+    {
+      "shareName": "AMAZON",
+      "numberOfShare": 200,
+      "sharePrice": 1900.0
+    },
+    {
+      "shareName": "APPLE",
+      "numberOfShare": 200,
+      "sharePrice": 2200.0
+    },
+    {
+      "shareName": "IBM",
+      "numberOfShare": 200,
+      "sharePrice": 2150.0
+    }
+  ]
+}
