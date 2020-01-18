@@ -3,7 +3,7 @@
 namespace OOPs.CommercialDataProcessing
 {
     /// <summary>
-    /// 
+    /// class for Customer stock data details
     /// </summary>
     public class CustomerStockData
     {
