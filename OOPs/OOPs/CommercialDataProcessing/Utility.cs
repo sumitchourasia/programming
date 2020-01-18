@@ -95,6 +95,7 @@ namespace OOPs.CommercialDataProcessing
             Console.WriteLine("total value of all the share : " + totalValue);
         }
 
+
         /// <summary>
         /// Creates the linked list of type company.
         /// </summary>
@@ -122,9 +123,17 @@ namespace OOPs.CommercialDataProcessing
         /// <param name="shareName">Name of the share.</param>
         /// <param name="numberOfShare">The number of share.</param>
         /// <returns></returns>
-        public static bool CheckShareAvailableInMemberStockObject(ListNodeCompany head, string shareName , int numberOfShare)
+        public static MemberStockData CheckShareAvailableInMemberStockObject(MemberStockPortfolio memberStockPortfolioObject, string shareName , int numberOfShare)
         {
-            return false;
+            IList<MemberStockData> list = memberStockPortfolioObject.memberStockList;
+            foreach (var share in list)
+                if ((share.shareName).Equals(shareName))
+                    if (share.numberOfShare >= numberOfShare)
+                        return share;
+                    else
+                        Console.WriteLine("number of share is only : {0} ",share.numberOfShare);
+
+            return null;
         }
 
         /// <summary>
@@ -134,11 +143,35 @@ namespace OOPs.CommercialDataProcessing
         /// <param name="shareName">Name of the share.</param>
         /// <param name="numberOfShare">The number of share.</param>
         /// <returns></returns>
-        public static ListNodeCompany CheckShareAvailableInLinkedListCompany(ListNodeCompany head ,string shareName , int numberOfShare )
+        public static CompanyShare CheckShareAvailableInLinkedListCompany(ListNodeCompany head ,string shareName , int numberOfShare )
         {
-            ListNodeCompany listNodecompany = null;
+            ListNodeCompany temp = null;
+            Console.WriteLine("inside checkshareavailableinlinkedlistcompany");
+            if (head == null)
+            {
+                Console.WriteLine("head is null");
+                return null;
+            }
+            else if ((head.data.symbol).Equals(shareName) && (head.data.numberOfShare >= numberOfShare))
+            {
+                Console.WriteLine("head data matched");
+                return head.data;
+            }
+            else
+            {
+                temp = head;
+                while (temp.next != null)
+                {
+                    if (temp.next.data.Equals(shareName) && temp.data.numberOfShare >= numberOfShare)
+                    {
+                        Console.WriteLine("temp data matched" + temp.data.symbol);
+                        return temp.data;
+                    }
+                    temp = temp.next;
+                }
+            }
 
-            return listNodecompany;
+            return null;
         }
 
         /// <summary>
@@ -147,10 +180,87 @@ namespace OOPs.CommercialDataProcessing
         /// <param name="head">The head.</param>
         /// <param name="shareName">Name of the share.</param>
         /// <returns></returns>
-        public static bool CheckShareNameIsInLinkedListCompany(ListNodeCompany head, string shareName)
+        public static CompanyShare CheckShareNameIsInLinkedListCompany(ListNodeCompany head, string shareName)
         {
-            return false;
+            Console.WriteLine("inside CheckShareNameIsInLinkedListCompany");
+            ListNodeCompany temp = null;
+            if (head == null)
+            {
+                Console.WriteLine("head is null");
+                return null;
+            }
+            else if ((head.data).Equals(shareName))
+            {
+                Console.WriteLine("head data matched");
+                return head.data;
+            }
+            else
+            {
+                temp = head;
+                while (temp.next != null)
+                {
+                    if ((temp.data.symbol).Equals(shareName))
+                        return temp.data;
+                    temp = temp.next;
+                }
+            }
+            return null;
         }
+
+        /// <summary>
+        /// check if deposit is enough for the specified purchase
+        /// </summary>
+        /// <param name="deposit">The deposit.</param>
+        /// <param name="numberOfShareToBuy">The number of share to buy.</param>
+        /// <param name="sharePrice">The share price.</param>
+        /// <returns></returns>
+        public static bool DepositAvailable(int deposit , int numberOfShareToBuy, int sharePrice)
+        {
+            if (deposit >= (numberOfShareToBuy * sharePrice))
+                return true;
+            else
+                return false;
+        }
+        /// <summary>
+        /// Makes the purchase.
+        /// </summary>
+        /// <param name="memberStockPortfolioObject">The member stock portfolio object.</param>
+        /// <param name="companyShareObject">The company share object.</param>
+        /// <param name="numberOfShare">The number of share.</param>
+        public static void MakePurchase( MemberStockPortfolio memberStockPortfolioObject , CompanyShare companyShareObject , int numberOfShare )
+        {
+            IList<MemberStockData> list = memberStockPortfolioObject.memberStockList;
+            foreach(var share in list)
+            {
+                if (share.ShareName.Equals(companyShareObject.symbol))
+                {
+                    share.numberOfShare = share.numberOfShare - numberOfShare;
+                    companyShareObject.numberOfShare = companyShareObject.numberOfShare + numberOfShare;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Adds the share in company object.
+        /// </summary>
+        /// <param name="companyShareObject">The company share object.</param>
+        /// <param name="numberOfShare">The number of share.</param>
+        public static void MakeSell(int numberOfShare , CompanyShare companyShareObject , MemberStockPortfolio memberStockPortfolioObject )
+        {
+            IList<MemberStockData> list = memberStockPortfolioObject.memberStockList;
+            Console.WriteLine("inside makesell");   
+            foreach(var share in list)
+            {
+                Console.WriteLine("inside foreach loop : "+share.shareName);
+                if(share.shareName .Equals(companyShareObject.symbol))
+                {
+                    share.numberOfShare += numberOfShare;
+                    companyShareObject.numberOfShare -= numberOfShare;
+                    Console.WriteLine(" share.numberOfShare = " + share.numberOfShare + " companyShareObject.numberOfShare " + companyShareObject.numberOfShare);
+                }
+            }
+        }
+
 
         /// <summary>
         /// Adds the list node company.
@@ -164,8 +274,10 @@ namespace OOPs.CommercialDataProcessing
                 head = newListNodeCompanyShare;
             else
             {
-               newListNodeCompanyShare.next =  head.next;
-                head = newListNodeCompanyShare;
+                ListNodeCompany temp = head;
+                while (temp.next != null)
+                       temp = temp.next;
+                temp.next = newListNodeCompanyShare;
             }
             return head;
         }
@@ -176,32 +288,26 @@ namespace OOPs.CommercialDataProcessing
         /// </summary>
         /// <param name="head">The head.</param>
         /// <param name="listNodecompanyObject">The list nodecompany object.</param>
-        public static void DeleteListNodeCompany(ListNodeCompany head , ListNodeCompany listNodecompanyObject)
+        public static ListNodeCompany DeleteListNodeCompany(ListNodeCompany head , CompanyShare companyShareObject)
         {
             ListNodeCompany temp = null;
-
             if (head == null)
-                return;
-            else if((head.data.symbol).Equals( listNodecompanyObject.data.symbol))
+                return null;
+            else if((head.data.symbol).Equals(companyShareObject.symbol))
                 head = head.next;
             else
             {
                 temp = head;
-
-                while(temp.next != null && !((temp.next.data.symbol).Equals(listNodecompanyObject.data.symbol)))
+                while(temp.next != null && !((temp.next.data.symbol).Equals(companyShareObject.symbol)))
                     temp = temp.next;
 
                 if(temp.next != null)
-                    if((temp.next.data.symbol).Equals(listNodecompanyObject.data.symbol))
+                    if((temp.next.data.symbol).Equals(companyShareObject.symbol))
                         temp.next = temp.next.next;
                 else
                     Console.WriteLine("listnodecompany node not found");
             }
+            return head;
         }
-        ////readfile()
-        ////deserializeObject()
-        //// methods for linkedlist operation
-        ////methods for operation for queue using linked list
-        ////methods for operation for stack using linked list
     }
 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOPs.CommercialDataProcessing
 {
@@ -8,9 +6,9 @@ namespace OOPs.CommercialDataProcessing
     {
         void NewStockAccount(string fileName);
         double ValueOf();
-        void Buy(int amount, string symbol);
-        void Sell(int amount, string symbol);
+        void Buy( MemberStockPortfolio memberStockPortfolioObject);
+        void Sell( MemberStockPortfolio memberStockPortfolioObject);
         void Save(string file);
-        void PrintReport();
+        void PrintReport(MemberStockPortfolio memberStockPortfolioObject);
     }
 }

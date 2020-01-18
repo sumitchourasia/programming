@@ -28,44 +28,34 @@ namespace OOPs.CommercialDataProcessing
 
             ////create StockAccountobject  
             StockAccount stockAccountObject = new StockAccount();
-
             string decision = string.Empty;
 
             do
             {
                 Console.WriteLine("enter your choice : ");
-                Console.WriteLine(" ");
+                Console.WriteLine(" 1 -> Buy share ");
+                Console.WriteLine(" 2 -> Sell Share");
 
                 int choice = Convert.ToInt32(Console.ReadLine());
 
                 switch (choice)
                 {
                     case 1:
-                        stockAccountObject.Buy( );
+                        stockAccountObject.Buy(memberStockPortfolioObject );
+                        stockAccountObject.PrintReport(memberStockPortfolioObject);
                         break;
 
                     case 2:
-                        stockAccountObject.Sell();
+                        stockAccountObject.Sell(memberStockPortfolioObject);
+                        stockAccountObject.PrintReport(memberStockPortfolioObject);
                         break;
 
-                    case 3:
-
-                        break;
-
+                    default:
+                        return;
                 }
                 Console.WriteLine("do you wish to contine :  (yes / no)");
-
                 decision = Console.ReadLine();
             } while (decision != "no");
-
-
-
-            ////start buy or sell
-            ////using switch case
-            ////buy
-            ////sell
-            ////valueOf
-            ////printReport
         }
     }
 }
