@@ -11,19 +11,33 @@ namespace OOPs.CommercialDataProcessing
     /// <seealso cref="OOPs.CommercialDataProcessing.IStockAccount" />
     public class StockAccount : IStockAccount
     {
-        /// <summary>
-        /// create the new linked List
-        /// </summary>
-        ListNodeCompany Head = Utility.CreateLinkedList();
+        MemberStockPortfolio memberStockPortfolioObject = null;
+        CustomerShare customerShareAccount = null;
 
         /// <summary>
         /// Creates new stockAccount.
         /// </summary>
         /// <param name="fileName">Name of the file.</param>
-        public void NewStockAccount(string fileName)
+        public MemberStockPortfolio NewStockAccount(string filePath)
         {
-            
+            ////read the file using path
+            string jsonString = Utility.ReadFile(filePath);
+            Console.WriteLine(jsonString);
+            ////deserialize the object
+            memberStockPortfolioObject = Utility.Deserialize(jsonString);
+            return memberStockPortfolioObject;
         }
+
+        /// <summary>
+        /// Creates new customershareaccount.
+        /// </summary>
+        /// <returns></returns>
+        public CustomerShare NewCustomerShareAccount()
+        {
+            customerShareAccount = new CustomerShare();
+            return customerShareAccount;
+        }
+
 
         /// <summary>
         /// Values the of stock share
@@ -31,8 +45,11 @@ namespace OOPs.CommercialDataProcessing
         /// <returns></returns>
         public double ValueOf()
         {
-
-            return 0.0;
+            double totalValue = 0.0;
+            IList <MemberStockData> list = memberStockPortfolioObject.memberStockList;
+            foreach(var share in list)
+                totalValue =   share.NumberOfShare * share.SharePrice; 
+            return totalValue;
         }
 
         /// <summary>
@@ -40,9 +57,9 @@ namespace OOPs.CommercialDataProcessing
         /// </summary>
         /// <param name="amount">The amount.</param>
         /// <param name="symbol">The symbol.</param>
-        public void Buy( MemberStockPortfolio memberStockPortfolioObject )
+        public void Buy( MemberStockPortfolio memberStockPortfolioObject ,StackUsingLL stack , QueueLL queueLL )
         {
-            CompanyShare companyObject = null;
+            CompanyShare companyShareObject = null;
             ListNodeCompany newListNodeCompanyShare = null;
             Console.WriteLine("which share you want to buy : ");
             string shareName = Console.ReadLine();
@@ -59,38 +76,28 @@ namespace OOPs.CommercialDataProcessing
             }
             ////check if deposit >= totalPrice of share. (numberOfshare * memberstockobjectlist.sharePrice)
             ////if false then return.
-
+            
             ////fetch the CompanyObject reference from the linked list
-            companyObject  = Utility.CheckShareNameIsInLinkedListCompany(Head, shareName);
-            if(companyObject == null)
-            {
-                Console.Write("companyObject is null");
-            }
-            if (Head != null)
-                Console.WriteLine("head is not null");
-            else
-            {
-                Console.WriteLine("head is null");
-            }
-           
-            ////create new companyobject wrap it in listnodecompany node and add to linked list
-            if (companyObject == null)
-            {
-                if(companyObject == null)
-                Console.WriteLine("creating new CompanyShareObjec");
-                companyObject = new CompanyShare();
-                companyObject.symbol = shareName;
+            companyShareObject  = Utility.CheckShareNameIsInLinkedListCompany(customerShareAccount.Head, shareName);
+
+                ////create new companyobject wrap it in listnodecompany node and add to linked list
+                if (companyShareObject == null)
+                {
+                companyShareObject = new CompanyShare();
+                companyShareObject.Symbol = shareName;
                 newListNodeCompanyShare = Utility.CreateListNodeCompany();
                 //// update date time here
-                newListNodeCompanyShare.data = companyObject;
+                newListNodeCompanyShare.Data = companyShareObject;
                 //// add the newCompanyShare into linkedlist
-                this.Head = Utility.AddListNodeCompany(Head, newListNodeCompanyShare);
-               
-            }
+                customerShareAccount.Head = Utility.AddListNodeCompany(customerShareAccount.Head, newListNodeCompanyShare);
+                }
 
             //// decrease the numberoofshare from member stock object and add the number of share to CompanyObject of LinkedList
-            Utility.MakePurchase(memberStockPortfolioObject, companyObject , numberOfShare);
+            Utility.MakePurchase(memberStockPortfolioObject, companyShareObject, numberOfShare);
 
+            string item = " purchase \t" + companyShareObject.Symbol + "\t " + companyShareObject.NumberOfShare + "\t " + companyShareObject.DateTime;
+            stack.push(item);
+            queueLL.Enque(item);
             //// for every Buy operation put the companyshareobject to the QueueCompanyTransaction
             ////add the companyshareObject to the stack.
 
@@ -101,7 +108,7 @@ namespace OOPs.CommercialDataProcessing
         /// </summary>
         /// <param name="amount">The amount.</param>
         /// <param name="symbol">The symbol.</param>
-        public void Sell( MemberStockPortfolio memberStockPortfolioObject)
+        public void Sell( MemberStockPortfolio memberStockPortfolioObject , StackUsingLL stack , QueueLL queueLL)
         {
             Console.WriteLine("enter the shareName to sell ");
             string shareName = Utility.ReadString();
@@ -109,32 +116,46 @@ namespace OOPs.CommercialDataProcessing
             int numberOfShare = Utility.ReadInt();
 
             ////check for available stock in companyshareobject inside Companylinkedlist and return companyshareobject
-            ////internally check if number of shares are equal then delete the node(companyShareObject).
-            CompanyShare companyShareObject = Utility.CheckShareAvailableInLinkedListCompany(Head, shareName, numberOfShare);
-           
+            CompanyShare companyShareObject = Utility.CheckShareAvailableInLinkedListCompany(customerShareAccount.Head, shareName, numberOfShare);
             if(companyShareObject == null )
             {
                 Console.WriteLine("company share not available");
                 return;
             }
-
             ////subtract share of stock from that companyshareobject that is inside companylinkedlist
             //// update into Memberstockobject
             Utility.MakeSell(numberOfShare, companyShareObject,memberStockPortfolioObject);
-            if (companyShareObject.numberOfShare == 0)
-              this.Head  = Utility.DeleteListNodeCompany(Head, companyShareObject);
+            string item = " sold \t" + companyShareObject.Symbol + "\t " + companyShareObject.NumberOfShare + "\t " + companyShareObject.DateTime;
 
-            ////for every sell transaction add the companyshareobject to the queueCompanytransaction
-            //// add to stack
+            ////for every sell transaction , add the status to the queueCompanytransaction
+            stack.push(item);
+            
+            ////for every sell transaction add the status to the queueCompanytransaction
+            queueLL.Enque(item);
+
+            ////check if number of shares are equal then delete the node(companyShareObject).
+            if (companyShareObject.NumberOfShare == 0)
+            customerShareAccount.Head  = Utility.DeleteListNodeCompany(customerShareAccount.Head, companyShareObject);
         }
 
         /// <summary>
         /// serialize the object to json file
         /// </summary>
         /// <param name="file">The file.</param>
-        public void Save(string file)
+        public void Save(string fileName)
         {
-           
+           string jsonResultString = JsonConvert.SerializeObject(memberStockPortfolioObject);
+           File.WriteAllText(fileName,jsonResultString);
+        }
+
+        /// <summary>
+        /// Saves the customer share to a file (serialize)
+        /// </summary>
+        /// <param name="fileName">Name of the file.</param>
+        public void SaveCustomerShare(string fileName)
+        {
+            string jsonResultString = JsonConvert.SerializeObject(customerShareAccount);
+            File.WriteAllText(fileName,jsonResultString);
         }
 
         /// <summary>
@@ -145,29 +166,27 @@ namespace OOPs.CommercialDataProcessing
             IList<MemberStockData> list = memberStockPortfolioObject.memberStockList;
             Console.WriteLine("ShareName \t  NumberOfShare \t SharePrice");
             foreach(var share in list)
-            {
-                Console.WriteLine(share.shareName + "\t" + share.numberOfShare + " \t"+share.sharePrice);
-            }
-
-            PrintList(Head);
+                Console.WriteLine(share.ShareName + "\t" + share.NumberOfShare + " \t"+share.SharePrice);
+            PrintCustomerShareReport(customerShareAccount);
+            Console.WriteLine("Remaining Deposit is : "+DataProcessing.deposit);
         }
 
         /// <summary>
         /// Prints the list.
         /// </summary>
         /// <param name="head">The head.</param>
-        public static void PrintList(ListNodeCompany head)
+        public void PrintCustomerShareReport(CustomerShare customerShareObject)
         {
-            if (head == null)
+            if (customerShareObject.Head == null)
                 return;
             else
             {
-                ListNodeCompany temp = head;
+                ListNodeCompany temp = customerShareObject.Head;
                 Console.WriteLine("shareName \t\t numberofshare");
                 while(temp != null)
                 {
-                    Console.WriteLine(temp.data.symbol + "\t\t" + temp.data.numberOfShare + "\t");
-                    temp = temp.next;
+                    Console.WriteLine(temp.Data.Symbol + "\t\t" + temp.Data.NumberOfShare + "\t");
+                    temp = temp.Next;
                 }
             }
         }

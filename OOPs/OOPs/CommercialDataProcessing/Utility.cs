@@ -38,7 +38,6 @@ namespace OOPs.CommercialDataProcessing
                 {
                     Console.WriteLine(e.Message);
                 }
-
                 if(success == true)
                 {
                     return input;
@@ -79,34 +78,6 @@ namespace OOPs.CommercialDataProcessing
         }
 
         /// <summary>
-        /// Prints the member stock.
-        /// </summary>
-        /// <param name="memberStockObject">The member stock object.</param>
-        public static void PrintMemberStock(MemberStockPortfolio memberStockObject)
-        {
-            double totalValue = 0;
-            IList<MemberStockData> stocklist = memberStockObject.memberStockList;
-            Console.WriteLine("ShareName \t NumberOfShare \t SharePrice \t TotalSharePrice  ");
-            foreach (var stock in stocklist)
-            {
-                totalValue += (stock.NumberOfShare * stock.SharePrice);
-                Console.WriteLine(stock.ShareName + " \t\t" + stock.NumberOfShare + "\t\t " + stock.SharePrice + " \t\t" + stock.NumberOfShare * stock.SharePrice);
-            }
-            Console.WriteLine("total value of all the share : " + totalValue);
-        }
-
-
-        /// <summary>
-        /// Creates the linked list of type company.
-        /// </summary>
-        /// <returns></returns>
-        public static ListNodeCompany CreateLinkedList()
-        {
-            ListNodeCompany head = null;
-            return head;
-        }
-
-        /// <summary>
         /// Creates the list node of type company.
         /// </summary>
         /// <returns></returns>
@@ -127,12 +98,11 @@ namespace OOPs.CommercialDataProcessing
         {
             IList<MemberStockData> list = memberStockPortfolioObject.memberStockList;
             foreach (var share in list)
-                if ((share.shareName).Equals(shareName))
-                    if (share.numberOfShare >= numberOfShare)
+                if ((share.ShareName).Equals(shareName))
+                    if (share.NumberOfShare >= numberOfShare && DataProcessing.deposit>=(share.NumberOfShare*share.SharePrice))
                         return share;
                     else
-                        Console.WriteLine("number of share is only : {0} ",share.numberOfShare);
-
+                        Console.WriteLine("number of share is only : {0} ", share.NumberOfShare);
             return null;
         }
 
@@ -146,31 +116,20 @@ namespace OOPs.CommercialDataProcessing
         public static CompanyShare CheckShareAvailableInLinkedListCompany(ListNodeCompany head ,string shareName , int numberOfShare )
         {
             ListNodeCompany temp = null;
-            Console.WriteLine("inside checkshareavailableinlinkedlistcompany");
             if (head == null)
-            {
-                Console.WriteLine("head is null");
                 return null;
-            }
-            else if ((head.data.symbol).Equals(shareName) && (head.data.numberOfShare >= numberOfShare))
-            {
-                Console.WriteLine("head data matched");
-                return head.data;
-            }
+            else if ((head.Data.Symbol).Equals(shareName) && (head.Data.NumberOfShare >= numberOfShare))
+                return head.Data;
             else
             {
                 temp = head;
-                while (temp.next != null)
+                while (temp != null)
                 {
-                    if (temp.next.data.Equals(shareName) && temp.data.numberOfShare >= numberOfShare)
-                    {
-                        Console.WriteLine("temp data matched" + temp.data.symbol);
-                        return temp.data;
-                    }
-                    temp = temp.next;
+                    if ((temp.Data.Symbol).Equals(shareName) && temp.Data.NumberOfShare >= numberOfShare)
+                        return temp.Data;
+                    temp = temp.Next;
                 }
             }
-
             return null;
         }
 
@@ -185,23 +144,17 @@ namespace OOPs.CommercialDataProcessing
             Console.WriteLine("inside CheckShareNameIsInLinkedListCompany");
             ListNodeCompany temp = null;
             if (head == null)
-            {
-                Console.WriteLine("head is null");
                 return null;
-            }
-            else if ((head.data).Equals(shareName))
-            {
-                Console.WriteLine("head data matched");
-                return head.data;
-            }
+            else if ((head.Data.Symbol).Equals(shareName))
+                return head.Data;
             else
             {
                 temp = head;
-                while (temp.next != null)
+                while (temp != null)
                 {
-                    if ((temp.data.symbol).Equals(shareName))
-                        return temp.data;
-                    temp = temp.next;
+                    if ((temp.Data.Symbol).Equals(shareName))
+                        return temp.Data;
+                    temp = temp.Next;
                 }
             }
             return null;
@@ -231,13 +184,13 @@ namespace OOPs.CommercialDataProcessing
         {
             IList<MemberStockData> list = memberStockPortfolioObject.memberStockList;
             foreach(var share in list)
-            {
-                if (share.ShareName.Equals(companyShareObject.symbol))
+                if (share.ShareName.Equals(companyShareObject.Symbol))
                 {
-                    share.numberOfShare = share.numberOfShare - numberOfShare;
-                    companyShareObject.numberOfShare = companyShareObject.numberOfShare + numberOfShare;
+                    share.NumberOfShare = share.NumberOfShare - numberOfShare;
+                    companyShareObject.NumberOfShare = companyShareObject.NumberOfShare + numberOfShare;
+                    DataProcessing.deposit -= (share.NumberOfShare * share.SharePrice); 
+                    companyShareObject.DateTime = DateTime.Now;
                 }
-            }
         }
 
         /// <summary>
@@ -248,17 +201,14 @@ namespace OOPs.CommercialDataProcessing
         public static void MakeSell(int numberOfShare , CompanyShare companyShareObject , MemberStockPortfolio memberStockPortfolioObject )
         {
             IList<MemberStockData> list = memberStockPortfolioObject.memberStockList;
-            Console.WriteLine("inside makesell");   
             foreach(var share in list)
-            {
-                Console.WriteLine("inside foreach loop : "+share.shareName);
-                if(share.shareName .Equals(companyShareObject.symbol))
+                if(share.ShareName .Equals(companyShareObject.Symbol))
                 {
-                    share.numberOfShare += numberOfShare;
-                    companyShareObject.numberOfShare -= numberOfShare;
-                    Console.WriteLine(" share.numberOfShare = " + share.numberOfShare + " companyShareObject.numberOfShare " + companyShareObject.numberOfShare);
+                    share.NumberOfShare += numberOfShare;
+                    companyShareObject.NumberOfShare -= numberOfShare;
+                    DataProcessing.deposit += share.NumberOfShare * share.SharePrice ;
+                    companyShareObject.DateTime = DateTime.Now;
                 }
-            }
         }
 
 
@@ -275,9 +225,9 @@ namespace OOPs.CommercialDataProcessing
             else
             {
                 ListNodeCompany temp = head;
-                while (temp.next != null)
-                       temp = temp.next;
-                temp.next = newListNodeCompanyShare;
+                while (temp.Next != null)
+                       temp = temp.Next;
+                temp.Next = newListNodeCompanyShare;
             }
             return head;
         }
@@ -293,21 +243,61 @@ namespace OOPs.CommercialDataProcessing
             ListNodeCompany temp = null;
             if (head == null)
                 return null;
-            else if((head.data.symbol).Equals(companyShareObject.symbol))
-                head = head.next;
+            else if((head.Data.Symbol).Equals(companyShareObject.Symbol))
+                head = head.Next;
             else
             {
                 temp = head;
-                while(temp.next != null && !((temp.next.data.symbol).Equals(companyShareObject.symbol)))
-                    temp = temp.next;
-
-                if(temp.next != null)
-                    if((temp.next.data.symbol).Equals(companyShareObject.symbol))
-                        temp.next = temp.next.next;
+                while(temp.Next != null && !((temp.Next.Data.Symbol).Equals(companyShareObject.Symbol)))
+                    temp = temp.Next;
+                if(temp.Next != null)
+                     if((temp.Next.Data.Symbol).Equals(companyShareObject.Symbol))
+                        temp.Next = temp.Next.Next;
                 else
                     Console.WriteLine("listnodecompany node not found");
             }
             return head;
+        }
+
+        /// <summary>
+        /// Prints the transaction.
+        /// </summary>
+        /// <param name="stack">The stack.</param>
+        public static void PrintTransaction( StackUsingLL stack )
+        {
+            ListNodeStatus temp;
+            if (stack == null || stack.head == null)
+                return;
+            else
+            {
+                temp = stack.head;
+                while(temp != null)
+                {
+                    Console.WriteLine(temp.Status);
+                    temp = temp.Next;
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// Prints the date time.
+        /// </summary>
+        /// <param name="queueLL">The queue ll.</param>
+        public static void PrintDateTime(QueueLL queueLL)
+        {
+            ListNodeStatus temp = null;
+            if (queueLL == null)
+                return;
+            else
+            {
+                temp = queueLL.Front;
+                while(temp != null)
+                {
+                    Console.WriteLine(temp.Status);
+                    temp = temp.Next;
+                }
+            }
         }
     }
 }

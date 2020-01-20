@@ -7,7 +7,43 @@ namespace OOPs.CommercialDataProcessing
     /// </summary>
     public class ListNodeCompany
     {
-        public CompanyShare data;
-        public ListNodeCompany next;
+        private CompanyShare data;
+        private ListNodeCompany next;
+
+        /// <summary>
+        /// Gets or sets the data.
+        /// </summary>
+        /// <value>
+        /// The data.
+        /// </value>
+        public CompanyShare Data
+        {
+            get
+            {
+                return this.data;
+            }
+            set
+            {
+                this.data = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the next.
+        /// </summary>
+        /// <value>
+        /// The next.
+        /// </value>
+        public ListNodeCompany Next
+        {
+            get
+            {
+                return this.next;
+            }
+            set
+            {
+                this.next = value;
+            }
+        }
     }
 }

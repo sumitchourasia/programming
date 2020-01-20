@@ -7,9 +7,9 @@ namespace OOPs.CommercialDataProcessing
     /// </summary>
     public class MemberStockData
     {
-        public string shareName;
-        public int numberOfShare;
-        public double sharePrice;
+        private string shareName;
+        private int numberOfShare;
+        private double sharePrice;
 
         /// <summary>
         /// Gets or sets the name of the share.

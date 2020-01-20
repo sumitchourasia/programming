@@ -1,5 +1,1 @@
-{
-  "CustomerStock": [
-
-  ]
-}
+{"Head":{"data":{"symbol":"IBM","numberOfShare":50,"dateTime":"0001-01-01T00:00:00"},"next":{"data":{"symbol":"APPLE","numberOfShare":30,"dateTime":"0001-01-01T00:00:00"},"next":null}}}
