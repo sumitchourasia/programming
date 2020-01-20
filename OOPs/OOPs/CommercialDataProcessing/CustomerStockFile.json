@@ -1,1 +1,17 @@
-{"Head":{"data":{"symbol":"IBM","numberOfShare":50,"dateTime":"0001-01-01T00:00:00"},"next":{"data":{"symbol":"APPLE","numberOfShare":30,"dateTime":"0001-01-01T00:00:00"},"next":null}}}
+{
+  "Head": {
+    "Data": {
+      "Symbol": "IBM",
+      "NumberOfShare": 8,
+      "DateTime": "2020-01-20T17:47:52.5474507+05:30"
+    },
+    "Next": {
+      "Data": {
+        "Symbol": "MICROSOFT",
+        "NumberOfShare": 8,
+        "DateTime": "2020-01-20T17:47:32.6375265+05:30"
+      },
+      "Next": null
+    }
+  }
+}

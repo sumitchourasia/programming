@@ -7,7 +7,7 @@ namespace OOPs.CommercialDataProcessing
     /// </summary>
     public class DataProcessing
     {
-        public static double deposit = 500000;
+        public static double deposit = 50000000;
         /// <summary>
         /// The member stock portfolio object
         /// </summary>

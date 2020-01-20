@@ -94,13 +94,16 @@ namespace OOPs.CommercialDataProcessing
         /// <param name="shareName">Name of the share.</param>
         /// <param name="numberOfShare">The number of share.</param>
         /// <returns></returns>
-        public static MemberStockData CheckShareAvailableInMemberStockObject(MemberStockPortfolio memberStockPortfolioObject, string shareName , int numberOfShare)
+        public static MemberStockData CheckShareAvailableInMemberStockObject(MemberStockPortfolio memberStockPortfolioObject, string shareName, int numberOfShare)
         {
             IList<MemberStockData> list = memberStockPortfolioObject.memberStockList;
             foreach (var share in list)
                 if ((share.ShareName).Equals(shareName))
-                    if (share.NumberOfShare >= numberOfShare && DataProcessing.deposit>=(share.NumberOfShare*share.SharePrice))
+                    if (share.NumberOfShare >= numberOfShare && DataProcessing.deposit >= (share.NumberOfShare * share.SharePrice))
+                    {
+                        Console.Write("inside condition");
                         return share;
+                    }
                     else
                         Console.WriteLine("number of share is only : {0} ", share.NumberOfShare);
             return null;
