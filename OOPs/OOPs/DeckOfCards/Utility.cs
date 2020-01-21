@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOPs.DeckOfCards
 {
+    /// <summary>
+    /// utility class
+    /// </summary>
     public static class Utility
     {
         /// <summary>
