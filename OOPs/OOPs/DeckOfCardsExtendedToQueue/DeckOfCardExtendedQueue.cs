@@ -13,9 +13,7 @@ namespace OOPs.DeckOfCardsExtendedToQueue
         public void DeckOfCardExtendedQueueMethod()
         {
             string[] Suits = new string[] { "Club", "Diamond", "Spade", "Heart" };
-
             int[] Ranks = new int[] { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
-
             string[,] DeckOfCards = new string[4, 13];
             
             ////initialise the array to store all the cards 

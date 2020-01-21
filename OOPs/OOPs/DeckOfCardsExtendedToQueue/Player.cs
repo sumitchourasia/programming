@@ -11,6 +11,5 @@ namespace OOPs.DeckOfCardsExtendedToQueue
         /// The card queue for each player
         /// </summary>
         public QueueCard queueCard = Utility.CreateQueueCard();
-
     }
 }

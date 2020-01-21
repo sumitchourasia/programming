@@ -155,7 +155,7 @@ namespace OOPs.DeckOfCardsExtendedToQueue
                 queuePlayer.Rear = playerNode;
             else
             {
-                queuePlayer.Rear.next = playerNode;
+                queuePlayer.Rear.Next = playerNode;
                 queuePlayer.Rear = playerNode;
             }
 
@@ -186,7 +186,7 @@ namespace OOPs.DeckOfCardsExtendedToQueue
                     if(card != null)
                         AddCardsToQueueCard(tempPlayer.Data.queueCard, card);
                    ////go to next player
-                    tempPlayer = tempPlayer.next;
+                    tempPlayer = tempPlayer.Next;
                 }
             }
         }
@@ -249,7 +249,7 @@ namespace OOPs.DeckOfCardsExtendedToQueue
             else
             {
                 temp = queueCard.Rear;
-                temp.next = card;
+                temp.Next = card;
                 queueCard.Rear = card;
             }
             if(queueCard.Front == null)
@@ -296,10 +296,10 @@ namespace OOPs.DeckOfCardsExtendedToQueue
                     {
                         Console.Write(tempPlayerCard.Suit + "-" + tempPlayerCard.Rank + "  ");
                     }
-                    tempPlayerCard = tempPlayerCard.next;
+                    tempPlayerCard = tempPlayerCard.Next;
                 }
                 Console.WriteLine();
-                tempPlayer = tempPlayer.next;
+                tempPlayer = tempPlayer.Next;
             }
         }
 
@@ -313,7 +313,7 @@ namespace OOPs.DeckOfCardsExtendedToQueue
             while(temp != null)
             {
                 SortCardQueue(temp.Data.queueCard);
-                temp = temp.next;
+                temp = temp.Next;
             }
         }
 
@@ -330,7 +330,7 @@ namespace OOPs.DeckOfCardsExtendedToQueue
 
             while(current != null)
             {
-                second = current.next;
+                second = current.Next;
                 while(second != null)
                 {
                     if(current.Rank > second.Rank)
@@ -342,9 +342,9 @@ namespace OOPs.DeckOfCardsExtendedToQueue
                         second.Suit = tempSuit;
                         second.Rank = tempRank;
                     }
-                    second = second.next;
+                    second = second.Next;
                 }
-                current = current.next;
+                current = current.Next;
             }
         }
 

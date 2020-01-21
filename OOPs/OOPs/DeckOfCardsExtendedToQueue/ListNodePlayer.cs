@@ -8,7 +8,11 @@ namespace OOPs.DeckOfCardsExtendedToQueue
     /// </summary>
     public class ListNodePlayer
     {
-        public Player Data;
-        public ListNodePlayer next;
+        private Player data;
+        private ListNodePlayer next;
+
+        public Player Data { get => this.data; set => this.data = value; }
+
+        public ListNodePlayer Next { get => this.next; set => this.next = value; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace OOPs.DeckOfCardsExtendedToQueue
 {
     /// <summary>
@@ -8,7 +7,22 @@ namespace OOPs.DeckOfCardsExtendedToQueue
     /// </summary>
     public class QueuePlayer
     {
-       public ListNodePlayer Front = null;
-       public ListNodePlayer Rear = null;
+       private ListNodePlayer front = null;
+       private ListNodePlayer rear = null;
+
+        /// <summary>
+        /// Gets or sets the front.
+        /// </summary>
+        /// <value>
+        /// The front.
+        /// </value>
+        public ListNodePlayer Front { get => this.front; set => this.front = value; }
+        /// <summary>
+        /// Gets or sets the rear.
+        /// </summary>
+        /// <value>
+        /// The rear.
+        /// </value>
+        public ListNodePlayer Rear { get => this.rear; set => this.rear = value; }
     }
 }
