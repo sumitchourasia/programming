@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace OOPs.Inventory_Details
 {
@@ -12,7 +12,7 @@ namespace OOPs.Inventory_Details
         /// <value>
         /// The rice.
         /// </value>
-        public List<InventoryData> Rice { get; set; }
+        public List<InventoryItemData> Rice { get; set; }
 
         /// <summary>
         /// Gets or sets the wheat.
@@ -20,7 +20,7 @@ namespace OOPs.Inventory_Details
         /// <value>
         /// The wheat.
         /// </value>
-        public List<InventoryData> Wheat { get; set; }
+        public List<InventoryItemData> Wheat { get; set; }
 
         /// <summary>
         /// Gets or sets the pulses.
@@ -28,6 +28,6 @@ namespace OOPs.Inventory_Details
         /// <value>
         /// The pulses.
         /// </value>
-        public List<InventoryData> Pulses { get; set; }
+        public List<InventoryItemData> Pulses { get; set; }
     }
 }

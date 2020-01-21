@@ -1,12 +1,12 @@
 {
   "Rice": [
     {
-      "name": "Basmati",
+      "name": "Basmati rice",
       "weight": 5.0,
-      "princePerKg": 80.0
+      "pricePerKg": 85.0
     },
     {
-      "name": "Sona Mansuri",
+      "name": "Mansuri rice",
       "weight": 5.0,
       "pricePerKg": 45.0
     }
@@ -18,22 +18,21 @@
       "pricePerKg": 28.0
     },
     {
-      "name": "Spelt",
+      "name": "Spelt wheat",
       "weight": 3.0,
       "pricePerKg": 30.0
     }
   ],
-  "Pulse": [
+  "Pulses": [
     {
-      "name": "Rajma",
+      "name": "Rajma pulses",
       "weight": 2.0,
       "pricePerKg": 55.0
     },
     {
-      "name": "Moong",
+      "name": "Moong pulses",
       "weight": 2.5,
       "pricePerKg": 60.0
     }
-
   ]
 }
