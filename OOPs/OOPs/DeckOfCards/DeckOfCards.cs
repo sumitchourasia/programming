@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+ 
 namespace OOPs.DeckOfCards
 {
+    /// <summary>
+    /// Deck of Cards class
+    /// </summary>
     public class DeckOfCards
     {
+        /// <summary>
+        /// Decksofcards methods to execute all operation
+        /// </summary>
         public void DeckOfCardsMethods()
         {
             string[] Suits = { "Club", "Diamond", "Heart", "Spade" };
@@ -15,13 +21,13 @@ namespace OOPs.DeckOfCards
 
             ////Initialize card array
             Utility.InitializeCardArray(CardArray, Suits, Ranks);
-
+            
             ////Shuffle the cards
             Utility.ShuffleCards(CardArray);
-
+            
             ////Distributes 9 - 9 cards to each of 4 player
             Utility.DistributeCards(CardArray,PlayerArray);
-
+            
             //// prints the cards with each players
             Utility.PrintString2DArray(PlayerArray);
         }

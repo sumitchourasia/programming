@@ -15,12 +15,8 @@ namespace OOPs.DeckOfCards
         public static void InitializeCardArray(string[,] CardArray, string[] Suits, string[] Ranks)
         {
             for (int i = 0; i < 4; i++)
-            {
                 for (int j = 0; j < 13; j++)
-                {
                     CardArray[i, j] = Suits[i] + "-" + Ranks[j]+" ";
-                }
-            }
         }
 
         /// <summary>
@@ -40,12 +36,10 @@ namespace OOPs.DeckOfCards
         /// <param name="Array">The array.</param>
         public static void PrintString2DArray(string[,] Array)
         {
-            for(int i=0;i<Array.GetLength(0);i++)
+            for (int i = 0; i < Array.GetLength(0); i++)
             {
-                for(int j=0;j<Array.GetLength(1);j++)
-                {
-                    Console.Write(Array[i,j]);
-                }
+                for (int j = 0; j < Array.GetLength(1); j++)
+                    Console.Write(Array[i, j]);
                 Console.WriteLine();
             }
         }
@@ -66,7 +60,6 @@ namespace OOPs.DeckOfCards
                  coloumnIndex1 = GenerateRandom(Array.GetLength(1));
                  rowIndex2 = GenerateRandom(Array.GetLength(0));
                  coloumnIndex2 = GenerateRandom(Array.GetLength(1));
-
                  Swap(Array,rowIndex1,coloumnIndex1,rowIndex2,coloumnIndex2);
             }
         }
@@ -94,12 +87,8 @@ namespace OOPs.DeckOfCards
         public static void DistributeCards(string[,] CardArray , string[,] PlayerArray)
         {
             for(int i=0;i<4;i++)
-            {
                 for(int j=0;j<9;j++)
-                {
                     PlayerArray[i,j] = CardArray[i,j];
-                }
-            }
         }
 
     }
