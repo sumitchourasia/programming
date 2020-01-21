@@ -60,7 +60,7 @@ namespace OOPs.CommercialDataProcessing
                 Console.WriteLine(" 7 -> PrintReport of stock");
                 Console.WriteLine(" 8 -> printReport of customer stock");
                 Console.WriteLine(" 9 -> print transaction done (stack)");
-                Console.WriteLine(" 10 -> print Date time of transaction (Queue)");
+                Console.WriteLine("10 -> print Date time of transaction (Queue)");
 
                 choice = Convert.ToInt32(Console.ReadLine());
 

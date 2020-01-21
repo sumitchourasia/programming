@@ -16,17 +16,7 @@ namespace OOPs.CommercialDataProcessing
         /// <value>
         /// The data.
         /// </value>
-        public CompanyShare Data
-        {
-            get
-            {
-                return this.data;
-            }
-            set
-            {
-                this.data = value;
-            }
-        }
+        public CompanyShare Data { get => this.data ; set => this.data = value ; }
 
         /// <summary>
         /// Gets or sets the next.
@@ -34,16 +24,6 @@ namespace OOPs.CommercialDataProcessing
         /// <value>
         /// The next.
         /// </value>
-        public ListNodeCompany Next
-        {
-            get
-            {
-                return this.next;
-            }
-            set
-            {
-                this.next = value;
-            }
-        }
+        public ListNodeCompany Next { get => this.next ; set => this.next = value; }
     }
 }

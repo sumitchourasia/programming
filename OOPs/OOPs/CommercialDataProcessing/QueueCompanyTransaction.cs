@@ -16,17 +16,7 @@ namespace OOPs.CommercialDataProcessing
         /// <value>
         /// The front.
         /// </value>
-        public ListNodeStatus Front
-        {
-            get
-            {
-                return this.front;
-            }
-            set
-            {
-                this.front = value;
-            }
-        }
+        public ListNodeStatus Front { get => this.front ; set => this.front = value; }
 
         /// <summary>
         /// Gets or sets the rear.
@@ -34,17 +24,7 @@ namespace OOPs.CommercialDataProcessing
         /// <value>
         /// The rear.
         /// </value>
-        public ListNodeStatus Rear
-        {
-            get
-            {
-                return this.rear;
-            }
-            set
-            {
-                this.rear = value;
-            }
-        }
+        public ListNodeStatus Rear { get => this.rear; set => this.rear = value; }
 
         /// <summary>
         /// Determines whether [is empty queue].

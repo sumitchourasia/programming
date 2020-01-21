@@ -45,7 +45,6 @@ namespace OOPs.CommercialDataProcessing
             }
         }
 
-
         /// <summary>
         /// Reads the file.
         /// </summary>
@@ -214,7 +213,6 @@ namespace OOPs.CommercialDataProcessing
                 }
         }
 
-
         /// <summary>
         /// Adds the list node company.
         /// </summary>
@@ -234,7 +232,6 @@ namespace OOPs.CommercialDataProcessing
             }
             return head;
         }
-
 
         /// <summary>
         /// Deletes the list node company.

@@ -17,17 +17,7 @@ namespace OOPs.CommercialDataProcessing
         /// <value>
         /// The symbol.
         /// </value>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-            set
-            {
-                this.symbol = value;
-            }
-        }
+        public string Symbol { get => this.symbol; set => this.symbol = value;}
 
         /// <summary>
         /// Gets or sets the number of share.
@@ -35,17 +25,7 @@ namespace OOPs.CommercialDataProcessing
         /// <value>
         /// The number of share.
         /// </value>
-        public int NumberOfShare
-        {
-            get
-            {
-                return this.numberOfShare;
-            }
-            set
-            {
-                this.numberOfShare = value;
-            }
-        }
+        public int NumberOfShare { get => this.numberOfShare ; set => this.numberOfShare = value ; }
 
         /// <summary>
         /// Gets or sets the share price.
@@ -53,16 +33,6 @@ namespace OOPs.CommercialDataProcessing
         /// <value>
         /// The share price.
         /// </value>
-        public DateTime DateTime
-        {
-            get
-            {
-                return dateTime;
-            }
-            set
-            {
-                this.dateTime = value;
-            }
-        }
+        public DateTime DateTime { get => this.dateTime ; set => this.dateTime = value ; }
     }
 }

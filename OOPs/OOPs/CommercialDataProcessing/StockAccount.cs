@@ -38,7 +38,6 @@ namespace OOPs.CommercialDataProcessing
             return customerShareAccount;
         }
 
-
         /// <summary>
         /// Values the of stock share
         /// </summary>

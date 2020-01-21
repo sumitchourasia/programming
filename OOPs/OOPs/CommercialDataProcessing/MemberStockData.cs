@@ -17,17 +17,7 @@ namespace OOPs.CommercialDataProcessing
         /// <value>
         /// The name of the share.
         /// </value>
-        public string ShareName
-        {
-            get 
-            {
-                return this.shareName;
-            }
-            set 
-            {
-                this.shareName = value;
-            }
-        }
+        public string ShareName { get => this.shareName; set => this.shareName = value; }
 
         /// <summary>
         /// Gets or sets the number of share.
@@ -35,17 +25,7 @@ namespace OOPs.CommercialDataProcessing
         /// <value>
         /// The number of share.
         /// </value>
-        public int NumberOfShare
-        {
-            get 
-            {
-                return this.numberOfShare;
-            }
-            set 
-            {
-                this.numberOfShare = value;
-            }
-        }
+        public int NumberOfShare { get => this.numberOfShare; set => this.numberOfShare = value;}
 
         /// <summary>
         /// Gets or sets the share price.
@@ -53,17 +33,6 @@ namespace OOPs.CommercialDataProcessing
         /// <value>
         /// The share price.
         /// </value>
-        public double SharePrice
-        {
-            get
-            {
-                return this.sharePrice;
-            }
-            set
-            {
-                this.sharePrice = value;
-            }
-        }
-
+        public double SharePrice { get => this.sharePrice ; set => this.sharePrice = value;}
     }
 }
