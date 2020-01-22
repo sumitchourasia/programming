@@ -99,10 +99,7 @@ namespace OOPs.CommercialDataProcessing
             foreach (var share in list)
                 if ((share.ShareName).Equals(shareName))
                     if (share.NumberOfShare >= numberOfShare && DataProcessing.deposit >= (share.NumberOfShare * share.SharePrice))
-                    {
-                        Console.Write("inside condition");
                         return share;
-                    }
                     else
                         Console.WriteLine("number of share is only : {0} ", share.NumberOfShare);
             return null;
@@ -143,7 +140,6 @@ namespace OOPs.CommercialDataProcessing
         /// <returns></returns>
         public static CompanyShare CheckShareNameIsInLinkedListCompany(ListNodeCompany head, string shareName)
         {
-            Console.WriteLine("inside CheckShareNameIsInLinkedListCompany");
             ListNodeCompany temp = null;
             if (head == null)
                 return null;
@@ -190,7 +186,7 @@ namespace OOPs.CommercialDataProcessing
                 {
                     share.NumberOfShare = share.NumberOfShare - numberOfShare;
                     companyShareObject.NumberOfShare = companyShareObject.NumberOfShare + numberOfShare;
-                    DataProcessing.deposit -= (share.NumberOfShare * share.SharePrice); 
+                    DataProcessing.deposit -= (companyShareObject.NumberOfShare * share.SharePrice); 
                     companyShareObject.DateTime = DateTime.Now;
                 }
         }
