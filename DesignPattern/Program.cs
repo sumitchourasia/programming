@@ -17,6 +17,9 @@ namespace DesignPattern
             Console.WriteLine("1 -> Singleton design pattern ");
             Console.WriteLine("2 -> FactoryDesignPattern ");
             Console.WriteLine("3 -> Prototype Design Pattern ");
+            Console.WriteLine("4 -> Adaptor Design pattern ");
+            Console.WriteLine("5 -> Facade Design Pattern ");
+            Console.WriteLine("6 -> Proxy Design Pattern ");
             //// take the input from the user
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -39,6 +42,19 @@ namespace DesignPattern
                     ////to execute the Adaptor Design Pattern program
                     AdaptorDesignPattern.AdaptorDesignPatternTest adaptorDesignObject = new AdaptorDesignPattern.AdaptorDesignPatternTest();
                     adaptorDesignObject.AdaptorDesignPatternTestMethod();
+                    break;
+                case 5:
+                    ////to execute the Facade Design Pattern program
+                    FacadeDesignPattern.FacadeDesignPatternTest facadeDesignObject = new FacadeDesignPattern.FacadeDesignPatternTest();
+                    facadeDesignObject.FacadeDesignPatternTestMethod();
+                    break;
+                case 6:
+                    ////to execute the proxy design pattern program
+                    ProxyDesignPattern.ProxyDesignPatternTest proxyObject = new ProxyDesignPattern.ProxyDesignPatternTest();
+                    proxyObject.ProxyDesignPatternTestMethod();
+                    break;
+                default :
+                    Console.WriteLine("default case");
                     break;
             }
         }
