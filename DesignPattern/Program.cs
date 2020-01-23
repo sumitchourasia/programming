@@ -20,6 +20,7 @@ namespace DesignPattern
             Console.WriteLine("4 -> Adaptor Design pattern ");
             Console.WriteLine("5 -> Facade Design Pattern ");
             Console.WriteLine("6 -> Proxy Design Pattern ");
+            Console.WriteLine("7 -> Observer Design Pattern ");
             //// take the input from the user
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -52,6 +53,10 @@ namespace DesignPattern
                     ////to execute the proxy design pattern program
                     ProxyDesignPattern.ProxyDesignPatternTest proxyObject = new ProxyDesignPattern.ProxyDesignPatternTest();
                     proxyObject.ProxyDesignPatternTestMethod();
+                    break;
+                case 7:
+                    ObserverDesignPattern.ObserverDesignPatternTest observerPatternObject = new ObserverDesignPattern.ObserverDesignPatternTest();
+                    observerPatternObject.Display();
                     break;
                 default :
                     Console.WriteLine("default case");
