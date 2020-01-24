@@ -21,6 +21,7 @@ namespace DesignPattern
             Console.WriteLine("5 -> Facade Design Pattern ");
             Console.WriteLine("6 -> Proxy Design Pattern ");
             Console.WriteLine("7 -> Observer Design Pattern ");
+            Console.WriteLine("8 -> Visitor Design Pattern");
             //// take the input from the user
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -58,10 +59,14 @@ namespace DesignPattern
                     ObserverDesignPattern.ObserverDesignPatternTest observerPatternObject = new ObserverDesignPattern.ObserverDesignPatternTest();
                     observerPatternObject.Display();
                     break;
+                case 8:
+                    VisitorDesignPattern.VisitorDesignPatternTest visitorDPObject = new VisitorDesignPattern.VisitorDesignPatternTest();
+                    visitorDPObject.VisitorDesignPatternTestMethod();
+                    break;
                 default :
                     Console.WriteLine("default case");
                     break;
             }
         }
-    }
+    }      
 }
