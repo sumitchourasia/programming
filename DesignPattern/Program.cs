@@ -22,6 +22,7 @@ namespace DesignPattern
             Console.WriteLine("6 -> Proxy Design Pattern ");
             Console.WriteLine("7 -> Observer Design Pattern ");
             Console.WriteLine("8 -> Visitor Design Pattern");
+            Console.WriteLine("9 -> Mediator Design Pattern ");
             //// take the input from the user
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -62,6 +63,10 @@ namespace DesignPattern
                 case 8:
                     VisitorDesignPattern.VisitorDesignPatternTest visitorDPObject = new VisitorDesignPattern.VisitorDesignPatternTest();
                     visitorDPObject.VisitorDesignPatternTestMethod();
+                    break;
+                case 9:
+                    MediatorDesignPattern.MediatorDesignPatternTest mediatorPatternObject = new MediatorDesignPattern.MediatorDesignPatternTest();
+                    mediatorPatternObject.MediatorDesignPatternTestMethod();
                     break;
                 default :
                     Console.WriteLine("default case");
