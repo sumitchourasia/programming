@@ -29,7 +29,8 @@ namespace DesignPattern
             switch(choice)
             {
                 case 1:
-                   
+                    SingletonDesignPattern.SingleDesignPatternTest singletonPatternObject = new SingletonDesignPattern.SingleDesignPatternTest();
+                    singletonPatternObject.SingleDesignPatternTestMethod();
                     break;
                 case 2:
                     ////to execute the factoryDesignPattern program.
