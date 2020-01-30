@@ -7,8 +7,6 @@ namespace OOPs.Inventory_Management
 {
     public static class Utility
     {
-        private static object streamReader;
-
         /// <summary>
         /// Reads the int.
         /// method to read integer from keyboard and return it
@@ -57,7 +55,6 @@ namespace OOPs.Inventory_Management
                 {
                     Console.WriteLine("invalid format try again!!!");
                 }
-               
             }
         }
 
@@ -90,7 +87,6 @@ namespace OOPs.Inventory_Management
                 Console.WriteLine("exception while reading the file");
                 Console.WriteLine(e.Message);
             }
-
             return fileToString;
         }
 
@@ -114,6 +110,24 @@ namespace OOPs.Inventory_Management
             return fileList;
         }
 
+        /// <summary>
+        /// serialize the object to json file
+        /// </summary>
+        /// <param name="file">The file.</param>
+        public static void Save( InventoryItems inventoryObject ,  string filePath)
+        {
+            try
+            {
+                string jsonResultString = JsonConvert.SerializeObject(inventoryObject);
+                File.WriteAllText(filePath, jsonResultString);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+            }
+        }
+
+
 
         /// <summary>
         /// Prints the inventory item.
@@ -122,17 +136,15 @@ namespace OOPs.Inventory_Management
         public static void PrintInventoryItem(InventoryItems fileList)
         {
             List<ItemsData>[] items = new List<ItemsData>[3];
-
             items[0] = fileList.Rice;
             items[1] = fileList.Wheat;
             items[2] = fileList.Pulses;
-
+            
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
-
             Console.WriteLine("Name \t\t" + "Price \t" + "   " + "Weight \t" + "TotalPrice");
-
+            
             foreach (var data in items)
             {
                 foreach (var item in data)
@@ -251,14 +263,12 @@ namespace OOPs.Inventory_Management
         /// <param name="inventoryItemsObject">The inventory items object.</param>
         public static void Update(InventoryItems inventoryItemsObject)
         {
-            Console.WriteLine("inside update method");
             List<ItemsData>[] listOfItems = new List<ItemsData>[3];
             listOfItems[0] = inventoryItemsObject.Rice;
             listOfItems[1] = inventoryItemsObject.Wheat;
             listOfItems[2] = inventoryItemsObject.Pulses;
 
             Console.Write("enter the name of item to update : ");
-
             string removeNameItem = ReadString();
             foreach (var items in listOfItems)
             {
@@ -294,8 +304,6 @@ namespace OOPs.Inventory_Management
                 }
             }
         }
-
-
-        
+                      
     }
 }
