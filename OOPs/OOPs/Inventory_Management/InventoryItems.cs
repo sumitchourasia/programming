@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace OOPs.Inventory_Management
 {
+    /// <summary>
+    /// class for inventory items 
+    /// </summary>
     public class InventoryItems
     {
         /// <summary>
