@@ -21,6 +21,8 @@ namespace OOPs.Inventory_Management
                 Utility.PrintInventoryItem(fileList);
                 InventoryManager inventoryManager = new InventoryManager();
                 inventoryManager.InventoryManagerMethod(fileList);
+                Utility.PrintInventoryItem(fileList);
+                Utility.Save(fileList, path);
             }
             catch (Exception e)
             {
