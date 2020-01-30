@@ -4,10 +4,13 @@ using System.Text;
 
 namespace OOPs.Inventory_Management
 {
-   public class InventoryManager
+    /// <summary>
+    /// Inventopry management class
+    /// </summary>
+    public class InventoryManager
     {
         /// <summary>
-        /// Managers this instance.
+        /// inventory management method
         /// </summary>
         public void InventoryManagerMethod(InventoryItems inventoryItemsObject)
         {
@@ -24,36 +27,29 @@ namespace OOPs.Inventory_Management
                 Console.WriteLine(" -1. exit");
 
                 choice = Utility.ReadInt();
-
+                ////switch case
                 switch (choice)
                 {
                     case 1:
                         Utility.AddRice(inventoryItemsObject);
                         break;
-
                     case 2:
                         Utility.AddWheat(inventoryItemsObject);
                         break;
-
                     case 3:
                         Utility.AddPulses(inventoryItemsObject);
                         break;
-
                     case 4:
                         Utility.RemoveRice(inventoryItemsObject);
                         break;
-                    
                     case 5:
                         Utility.Remove(inventoryItemsObject);
                         break;
-
                     case 6:
                         Utility.Update(inventoryItemsObject);
                         break;
-                        
                     case -1:
                         return;
-
                     default:
                         Console.WriteLine("Enter the proper choice");
                         break;
